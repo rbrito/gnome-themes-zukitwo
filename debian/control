@@ -1,0 +1,27 @@
+Source: gnome-themes-zukitwo
+Section: gnome
+Priority: optional
+Maintainer: Rogério Brito <rbrito@ime.usp.br>
+Build-Depends:
+ debhelper (>= 8)
+Standards-Version: 3.9.2
+Homepage: http://lassekongo83.deviantart.com/art/Zukitwo-203936861
+Vcs-Git: git://git.debian.org/collab-maint/gnome-themes-zukitwo.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/gnome-themes-zukitwo.git;a=summary
+
+Package: gnome-themes-zukitwo
+Architecture: all
+Depends:
+ gtk2-engines-murrine (>= 0.98.1.1),
+ gtk2-engines-pixbuf,
+ gtk3-engines-unico (>= 1.0.1),
+ ${misc:Depends},
+ ${shlibs:Depends}
+Recommends:
+ gnome-tweak-tool
+Description: theme for GTK2, GTK3, GNOME Shell, Metacity, Unity and XFWM4
+ Zukitwo is an attractive theme for GTK2, GTK3, GNOME Shell, Metacity, Unity
+ and XFWM4.
+ .
+ It is meant to give an alternative to the default toolkit's themes and to
+ provide unified look to applications on the cited environments.
