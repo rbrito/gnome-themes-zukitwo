@@ -5,7 +5,7 @@ Maintainer: Rogério Brito <rbrito@ime.usp.br>
 Build-Depends:
  debhelper (>= 8)
 Standards-Version: 3.9.3
-Homepage: http://lassekongo83.deviantart.com/art/Zukitwo-203936861
+Homepage: http://gnome-look.org/content/show.php/Zukitwo?content=140562
 Vcs-Git: git://git.debian.org/collab-maint/gnome-themes-zukitwo.git
 Vcs-Browser: http://git.debian.org/?p=collab-maint/gnome-themes-zukitwo.git;a=summary
 
