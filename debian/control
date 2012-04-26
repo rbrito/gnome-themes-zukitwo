@@ -14,7 +14,7 @@ Architecture: all
 Depends:
  gtk2-engines-murrine (>= 0.98.1.1),
  gtk2-engines-pixbuf,
- gtk3-engines-unico (>= 1.0.1),
+ gtk3-engines-unico (>= 1.0.2),
  ${misc:Depends},
  ${shlibs:Depends}
 Recommends:
