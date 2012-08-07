@@ -1,6 +1,10 @@
-gnome-themes-zukitwo (2011.12.29-1~1.gbpede91f) unstable; urgency=low
+gnome-themes-zukitwo (2012.07.08-1) unstable; urgency=low
 
-  ** SNAPSHOT build @ede91fb8f4e07fb3119d6de498e62cd2cf0c1a10 **
+  * Imported Upstream version 2012.07.08
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Mon, 06 Aug 2012 22:28:54 -0300
+
+gnome-themes-zukitwo (2011.12.29-1) unstable; urgency=low
 
   * Initial release (Closes: #nnnn) # Not yet filed.
 
