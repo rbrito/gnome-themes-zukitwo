@@ -41,6 +41,7 @@ style "murrine-default" {
 	GtkButton	::child-displacement-x		= 1
 	GtkButton	::child-displacement-y		= 1
 	GtkButton	::default-border		= { 0, 0, 0, 0 }
+	GtkButtonBox	::child-min-height		= 26
 	GtkCheckButton	::indicator-size		= 15
 	
 	GtkWidget	::new-tooltip-style		= 1
@@ -80,6 +81,7 @@ style "murrine-default" {
 
 	GtkMenu		::horizontal-padding		= 0
 	GtkMenu		::vertical-padding		= 0
+	GtkMenuItem	::horizontal-padding		= 0
 
 	WnckTasklist	::fade-overlay-rect		= 0
 	# The following line hints to gecko (and possibly other appliations)
@@ -95,9 +97,9 @@ style "murrine-default" {
 	#GtkToolbar	::shadow-type = GTK_SHADOW_NONE # Makes toolbars flat and unified.
 	#GtkMenuBar	::shadow-type = GTK_SHADOW_NONE # Makes menus flat and unified.
 	GtkMenuBar	::window-dragging		= 1
+	GtkToolbar	::window-dragging		= 1
 
-	# The little ugly gripper at the bottom right needs to go. Loss of usability for the
-	# sake of a more good-looking theme. You can remove this if you don't use Ubuntu 11.04.
+	# The little ugly gripper at the bottom right needs to go.
 	GtkWindow	::resize-grip-height		= 0
 	GtkWindow	::resize-grip-width		= 0
 
@@ -211,7 +213,7 @@ style "murrine-entry" = "murrine-wider" {
 
 style "murrine-button" = "murrine-wider" {
 	bg[NORMAL]	= shade (1.06, @bg_color) 
-	bg[PRELIGHT]	= shade (1.2, @bg_color)  
+	bg[PRELIGHT]	= shade (1.13, @bg_color)  
 	bg[ACTIVE]	= shade (0.85, @bg_color)
 	bg[SELECTED]	= shade (1.0, @selected_bg_color)  
 	bg[INSENSITIVE]	= shade (0.95, @bg_color)
@@ -231,7 +233,7 @@ style "murrine-notebook-bg" {
 
 style "murrine-notebook" = "murrine-notebook-bg" {
 	xthickness = 2 # Width of tabs and notebook borders.
-	ythickness = 2 # Height of tabs and notebook borders.
+	ythickness = 1 # Height of tabs and notebook borders.
 
 	engine "murrine" {
 		contrast		= .8
@@ -244,6 +246,7 @@ style "murrine-notebook" = "murrine-notebook-bg" {
 style "notebook-close" { stock["gtk-close"] = {{ "widgets/Others/close.png", *, *, * }} } # Close icon on tabs
 
 style "murrine-menubar" = "murrine-dark" {
+	ythickness	= 0
 	bg[NORMAL]	= @menu_color
 	fg[NORMAL]	= @selected_fg_color
 	fg[PRELIGHT]	= @selected_fg_color
@@ -251,18 +254,19 @@ style "murrine-menubar" = "murrine-dark" {
 }
 
 style "murrine-menubar-menuitem" = "murrine-menu" {
+	xthickness	= 6
 	bg[PRELIGHT]	= @menu_color
 	bg[SELECTED]	= @menu_color
 	engine "murrine" {
 		contrast = .0 
-		roundness = 0
+		roundness = 2
 		border_shades = { 1.8, 1.0 }
 		gradient_shades	= {1.7,1.7,1.0,1.0}
 	}
 }
 
 style "murrine-menu" = "murrine-dark" {
-	ythickness = 3
+	ythickness = 0
 	xthickness = 0
 
 	engine "murrine" {
@@ -351,7 +355,6 @@ style "murrine-progressbar" = "murrine-thin" {
 
 style "murrine-statusbar" {
 	xthickness = 2
-	font_name = "7"
 }
 
 style "murrine-comboboxentry" { engine "murrine" { contrast = .4 }}
