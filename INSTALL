@@ -4,12 +4,13 @@
 
 To use this theme you'll need the LATEST stable versions of the following software:
 
-- Gnome 2.32 or Gnome 3.
-- The Unico GTK3 engine. (Only needed if you are using GTK3 applications. Google it or search for it on launchpad.net.)
+- Gnome 2.32 or Gnome 3.4
+- The Unico GTK3 engine v1.0.2. (Only needed if you are using GTK3 applications. Google it or search for it on launchpad.net.)
 - The Murrine GTK2 engine 0.98.1.1 or later. (Package name varies between distributions. This engine should be installed by default in Ubuntu.)
 - The Pixbuf GTK2 engine (Package name varies between distributions. This engine should be installed by default in Ubuntu. In arch, fedora and some other non-debian distributions it's included in the gtk2-engines or gtk-engines package. In Debian based distros it's called gtk2-engines-pixbuf.)
 - Nautilus-Elementary (Not needed. But it's recommended if you're using Gnome 2.32.)
 - gnome-tweak-tool (If you're using Gnome 3.)
+- Gnome-shell-extension-user-theme (To enable 3rd party themes in gnome-shell.)
 
 ## INSTALLING THE GTK2 THEME ##
 
@@ -33,12 +34,12 @@ Note: The /.themes folder is only for your user. If you for example use an appli
 Go to System -> Accessories -> Advanced Settings or search for gnome-tweak-tool.
 In this app (gnome-tweak-tool) you can select the GTK theme and metacity theme.
 
-To use the GNOME-Shell theme you need to install gnome-shell-extensions-common and gnome-shell-extension-user-theme.
-These packages may or may not be available in your distribution's repository.
+To use the GNOME-Shell theme you need to install gnome-shell-extension-user-theme.
+This package may or may not be available in your distribution's repository. Otherwise availble here - https://extensions.gnome.org/
 
 If changes doesn't take place after selecting the themes you can try to log out and back in. If you're in Gnome-shell you can just press ALT+F2 and type r to restart the shell.
 
-## USING A TRANSPARENT PANEL BACKGROUND ##
+## USING A TRANSPARENT PANEL BACKGROUND IN GNOME 2 ##
 
 1. Right-click on your panel and select properties.
 2. Set the height to 32px and the position to bottom. 
@@ -46,11 +47,9 @@ If changes doesn't take place after selecting the themes you can try to log out 
 4. Select the panelbg.png included the archive. (panelbg.png)
 If the panel didn't become transparent you're using an old version of Gnome, or you are not using the Zukitwo GTK theme.
 
-## USING A CUSTOM PANEL BACKGROUND IN GNOME 3 FALLBACK MODE (RECOMMENDED) ##
+## USING A CUSTOM PANEL BACKGROUND IN GNOME 3 FALLBACK MODE ##
 
-1. ALT + Right-click on your panel and select properties. 
-2. Click on the Background tab and select to use a custom background image.
-3. Select the panelbg.png included the archive. (panelbg.png)
+Due to some complications this is not 100% possible. Only certain parts will use the custom background.
 
 ## NOT USING NAUTILUS ELEMENTARY IN GNOME 2.32? ##
 (Nautilus is the default file-manager in Gnome. There's a mod for it that makes it look more compact. It's called Nautilus Elementary.)

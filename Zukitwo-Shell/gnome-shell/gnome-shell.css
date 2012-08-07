@@ -1,8 +1,12 @@
-/* Copyright 2009, Red Hat, Inc.
+/* Gnome-shell theme by http://lassekongo83.deviantart.com
  *
- * Portions adapted from Mx's data/style/default.css
- *   Copyright 2009 Intel Corporation
- *
+ * Original Theme:
+ * ------------------------------------------------- *
+ * Copyright 2009, Red Hat, Inc.                     *
+ *                                                   *
+ * Portions adapted from Mx's data/style/default.css *
+ *   Copyright 2009 Intel Corporation                *
+ * ------------------------------------------------- *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms and conditions of the GNU Lesser General Public License,
  * version 2.1, as published by the Free Software Foundation.
@@ -17,12 +21,32 @@
  * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-/* Zukitwo Gnome-shell theme by lassekongo83 */
+/* Text Styles */
 
+/* default text style */
 stage {
-	font-family: Ubuntu, cantarell, sans-serif;
+	font-family: Ubuntu, Droid Sans, Trebuchet MS, Liberation Sans, sans-serif;
+	font-size: 9pt; /* The default font size. */
+	color: white;
 }
 
+/* small fonts */
+.app-well-menu, .contact-details-status, .run-dialog-label, .run-dialog-error-label {
+	font-size: 8pt;
+}
+
+/* small 7.5 pt */
+.calendar-month-label, .calendar-day-base {
+	font-size: 7.5pt;
+}
+
+/* small bold fonts */
+.dash-label, .window-caption, .switcher-list, .source-title, .app-well-app > .overview-icon, .remove-favorite > .overview-icon, .search-result-content > .overview-icon {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+/* links */
 .shell-link {
 	color: #0000ff;
 	text-decoration: underline;
@@ -32,9 +56,7 @@ stage {
 	color: #0000e0;
 }
 
-.label-shadow {
-	color: rgba(0,0,0,0.5);
-}
+/* Scroll Bars */
 
 StScrollBar {
 	padding: 0px;
@@ -42,6 +64,10 @@ StScrollBar {
 
 StScrollView.vfade {
 	-st-vfade-offset: 68px;
+}
+
+StScrollView.hfade {
+	-st-hfade-offset: 68px;
 }
 
 StScrollView StScrollBar {
@@ -82,31 +108,51 @@ StScrollBar StButton#vhandle:hover {
 	background-gradient-end: rgba(255,255,255,0.9);
 }
 
-StTooltip StLabel {
-	border: 1px solid rgba(255,255,255,0.6);
-	border-radius: 5px;
-	padding: 2px 12px;
-	background-color: rgba(0,0,0,0.9);
-	color: #ffffff;
-	font-size: 0.8em;
-	font-weight: normal;
-	text-align: center;
+/* Check Boxes */
+
+.check-box ShellGenericContainer {
+	spacing: .8em;
+}
+
+.check-box StBin {
+	width: 24px;
+	height: 22px;
+	background-image: url("checkbox-off.svg");
+}
+
+.check-box:focus StBin {
+	background-image: url("checkbox-off-focused.svg");
+}
+
+.check-box:checked StBin {
+	background-image: url("checkbox.svg");
+}
+
+.check-box:focus:checked StBin {
+	background-image: url("checkbox-focused.svg");
 }
 
 /* PopupMenu */
 
 .popup-menu-boxpointer {
-	border: 2px solid rgba(255,255,255,0.4);
+	/* Keeping arrow style for extra effect and less "warning junk" in .xsession-errors */
+	/* Border seems to behave strange with single background-color. Background-gradient fixes it. */
+	-arrow-border-radius: 0px;
+	-arrow-background-color: rgba(48,48,48,0.0);
+	-arrow-border-width: 0px;
+	-arrow-border-color: rgba(255,255,255,0.0);
+	-arrow-base: 4px;
+	-arrow-rise: 2px;
+	border: 2px solid rgba(255,255,255,0.6);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.8);
-	background-gradient-end: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
-	border-radius: 4px;
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	border-radius: 0px;
 }
 
 .popup-menu {
 	color: #fff;
-	font-size: 9pt;
 	min-width: 85px;
 }
 
@@ -115,9 +161,9 @@ StTooltip StLabel {
 }
 
 .popup-sub-menu { /* Don't use border-radius or box-shadow here. It causes the shell to crash. */
+	background-gradient-direction: vertical;
 	background-gradient-start: rgba(0,0,0,0.0);
 	background-gradient-end: rgba(0,0,0,0.0);
-	background-gradient-direction: vertical;
 }
 
 .popup-sub-menu .popup-menu-item:ltr {
@@ -145,7 +191,6 @@ StTooltip StLabel {
 	background-color: rgba(0,0,0,0.9);
 	padding: 1em 0em;
 	color: #ffffff;
-	font-size: 9pt;
 	border: 1px solid #5f5f5f;
 	border-radius: 4px;
 }
@@ -154,22 +199,27 @@ StTooltip StLabel {
  * override .popup-menu.font-size, everything else will scale with it.
  */
 .popup-menu-content {
-	padding: 1em 0em;
+	padding: 0.5em 0em;
 }
 
 .popup-menu-item {
 	font-weight: normal;
-	font-size: 9pt;
 	padding: .4em 1.75em;
 	spacing: 1em;
 	color: #fff;
+	border: 1px solid rgba(220,220,220,0.0);
+	border-left-width: 0;
+	border-right-width: 0;
 }
 
 .popup-menu-item:active {
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(162,184,202,0.9);
-	background-gradient-end: rgba(117,145,169,0.9);
+	background-gradient-start: rgba(220,220,220,0.3);
+	background-gradient-end: rgba(220,220,220,0.3);
 	color: #fff;
+	border: 1px solid rgba(255,255,255,0.35);
+	border-left-width: 0;
+	border-right-width: 0;
 }
 
 .popup-menu-item:insensitive {
@@ -184,11 +234,12 @@ StTooltip StLabel {
 }
 
 .popup-separator-menu-item {
-	-gradient-height: 1px;
-	-gradient-start: rgba(255,255,255,0.0);
-	-gradient-end: rgba(255,255,255,0.12);
-	-margin-horizontal: 1.5em;
-	height: 1em;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(0,0,0,0.5);
+	border-bottom: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	height: 0.1em;
 }
 
 .popup-alternating-menu-item:alternate {
@@ -201,8 +252,8 @@ StTooltip StLabel {
 	-slider-height: 2px;
 	-slider-background-color: #333333;
 	-slider-border-color: #5f5f5f;
-	-slider-active-background-color: rgb(117,145,169);
-	-slider-active-border-color: rgb(162,184,202);
+	-slider-active-background-color: rgba(162,184,202,0.9);
+	-slider-active-border-color: rgba(117,145,169,0.9);
 	-slider-border-width: 1px;
 	-slider-handle-radius: 0.5em;
 }
@@ -221,37 +272,47 @@ StTooltip StLabel {
 }
 
 .popup-menu-icon {
-	icon-size: 1.14em;
+	icon-size: 1.09em;
 }
 
-/* Switches (to be used in menus) */
+/* Switches */
 .toggle-switch {
-	width: 65px;
-	height: 22px;
+	width: 32px;
+	height: 16px;
+	background-color: rgba(0,0,0,0.5);
 }
 
 .toggle-switch-us {
-	background-image: url("off.png");
+	background-image: url("switch-off.png");
+	background-size: contain;
 }
+
 .toggle-switch-us:checked {
-	background-image: url("on.png");
+	background-image: url("switch-on.png");
+	background-size: contain;
 }
 
 .toggle-switch-intl {
-	background-image: url("off.png");
+	background-image: url("switch-off.png");
+	background-size: contain;
 }
+
 .toggle-switch-intl:checked {
-	background-image: url("on.png");
+	background-image: url("switch-on.png");
+	background-size: contain;
 }
 
 .nm-menu-item-icons {
 	spacing: .5em;
 }
 
-/* Shared button properties */
+/* Buttons */
 
-.dash-search-button, .notification-button, .notification-icon-button,
-.hotplug-notification-item, .hotplug-resident-eject-button,
+.dash-search-button,
+.notification-button,
+.notification-icon-button,
+.hotplug-notification-item,
+.hotplug-resident-eject-button,
 .modal-dialog-button {
 	color: white;
 	border: 1px solid #8b8b8b;
@@ -260,23 +321,35 @@ StTooltip StLabel {
 	background-gradient-end: rgba(255,255,255,0);
 }
 
-.dash-search-button:hover, .notification-button:hover,
-.notification-icon-button:hover, .hotplug-notification-item:hover,
-.hotplug-resident-eject-button:hover, .modal-dialog-button:hover {
+.dash-search-button:hover,
+.notification-button:hover,
+.notification-icon-button:hover,
+.hotplug-notification-item:hover,
+.hotplug-resident-eject-button:hover,
+.modal-dialog-button:hover {
+	background-gradient-direction: vertical;
 	background-gradient-start: rgba(255,255,255,0.3);
 	background-gradient-end: rgba(255,255,255,0.1);
 }
 
-.dash-search-button:selected, .notification-button:focus,
-.notification-icon-button:focus, .hotplug-notification-item:focus,
+.dash-search-button:selected,
+.dash-search-button:focus,
+.notification-button:focus,
+.notification-icon-button:focus,
+.hotplug-notification-item:focus,
 .modal-dialog-button:focus {
-	border: 2px solid #8b8b8b;
+	border: 1px solid #8b8b8b;
 }
 
-.dash-search-button:active, .dash-search-button:pressed,
-.notification-button:active, .notification-icon-button:active,
-.hotplug-notification-item:active, .hotplug-resident-eject-button:active,
-.modal-dialog-button:active, .modal-dialog-button:pressed {
+.dash-search-button:active,
+.dash-search-button:pressed,
+.notification-button:active,
+.notification-icon-button:active,
+.hotplug-notification-item:active,
+.hotplug-resident-eject-button:active,
+.modal-dialog-button:active,
+.modal-dialog-button:pressed {
+	background-gradient-direction: vertical;
 	background-gradient-start: rgba(255,255,255,0);
 	background-gradient-end: rgba(255,255,255,0.2);
 }
@@ -289,17 +362,16 @@ StTooltip StLabel {
 	border-left: 0px;
 	border-right: 0px;
 	border-radius: 0px;
-	color: rgba(255,255,255,1.0);
+	color: white;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(100,100,100,0.1);
+	background-gradient-start: rgba(0,0,0,0.1);
 	background-gradient-end: rgba(0,0,0,0.4);
-	height: 24px;
-	font-size: 9pt;
-	font-weight: bold;
+	height: 2.0em;
+	font-weight: normal;
 }
 
-#panelLeft, #panelCenter {
-	spacing: 4px;
+#panelLeft, #panelCenter, #panelRight {
+	spacing: 2px;
 }
 
 #panelLeft:ltr {
@@ -319,57 +391,76 @@ StTooltip StLabel {
 }
 
 #appMenu {
-	spacing: 0px;
+	spacing: 4px;
+}
+
+/* used for the app menu header only */
+.label-shadow {
+	color: rgba(0,0,0,0.0);
 }
 
 .panel-button #appMenuIcon {
-	app-icon-bottom-clip: 1px;
+	app-icon-bottom-clip: 0px;
+	height: 0px;
+	width: 0px;
 }
 
 .panel-button:active #appMenuIcon,
 .panel-button:checked #appMenuIcon,
 .panel-button:focus #appMenuIcon {
-	app-icon-bottom-clip: 2px;
+	app-icon-bottom-clip: 1px;
 	color: white;
 }
 
 .app-menu-icon {
-	width: 24px;
-	height: 24px;
+	width: 0px;
+	height: 0px;
 }
 
 .panel-button {
-	-natural-hpadding: 12px;
+	-natural-hpadding: 10px;
 	-minimum-hpadding: 6px;
 	font-weight: bold;
 	color: #fff;
+	border: 1px solid rgba(255,255,255,0);
+	border-top: 0px;
+	border-bottom: 0px;
+	transition-duration: 200;
 }
 
 .panel-button:hover {
+	border: 1px solid rgba(255,255,255,0.4);
+	border-top: 0px;
+	border-bottom: 0px;
 	color: white;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.2);
-	background-gradient-end: rgba(255,255,255,0.08);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.06);
+	background-gradient-start: rgba(255,255,255,0.3);
+	background-gradient-end: rgba(255,255,255,0.2);
 }
 
 .panel-button:active,
 .panel-button:overview,
 .panel-button:focus {
+	border: 1px solid rgba(255,255,255,0.1);
+	border-top: 0px;
+	border-bottom: 0px;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.3);
-	background-gradient-end: rgba(255,255,255,0.18);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.1);
+	background-gradient-start: rgba(0,0,0,0.1);
+	background-gradient-end: rgba(0,0,0,0.25);
 	color: white;
+	box-shadow: inset 0px 1px 5px rgba(0,0,0,0.251);
 }
 
 .panel-status-button:active,
 .panel-status-button:checked,
 .panel-status-button:focus {
+	border: 1px solid rgba(255,255,255,0.1);
+	border-top: 0px;
+	border-bottom: 0px;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.3);
-	background-gradient-end: rgba(255,255,255,0.18);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.1);
+	background-gradient-start: rgba(0,0,0,0.1);
+	background-gradient-end: rgba(0,0,0,0.25);
+	color: white;
 }
 
 .panel-button:active > .system-status-icon,
@@ -378,36 +469,41 @@ StTooltip StLabel {
 	icon-shadow: black 0px 0px 3px;
 }
 
-/* Replaces the activities text with a custom image. Height and width should use the same size as the image file. */
+.panel-menu {
+	-boxpointer-gap: 3px /* Distance between the menu and panel */
+}
+
+/* Replaces the activities text with a custom image */
 #panelActivities {
-	border: none;
 	background-image: url("start1.png");
-	background-position: 0 0;
+	background-position: center center;
+	border: 0;
 	width: 58px;
-	height: 24px;
+	height: 2.0em;
 	color: rgba(0,0,0,0.0);
+	box-shadow: none;
 }
 
 #panelActivities:hover {
-	transition-duration: 300;
 	background-image:  url("start2.png");
+	border: 0;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(140,200,255,0.0);
-	background-gradient-end: rgba(61,149,231,0.0);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.0);
+	background-gradient-start: rgba(255,255,255,0);
+	background-gradient-end: rgba(255,255,255,0);
+	box-shadow: none;
 }
+
 #panelActivities:active,
 #panelActivities:overview {
 	background-image:  url("start1.png");
+	border: 0;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(140,200,255,0.0);
-	background-gradient-end: rgba(61,149,231,0.0);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.0);
+	background-gradient-start: rgba(255,255,255,0);
+	background-gradient-end: rgba(255,255,255,0);
+	box-shadow:inset 0 0 0 0 rgba(0,0,0,0);
 }
 
-.panel-menu {
-	-boxpointer-gap: 4px
-}
+/* User Menu */
 
 #panelUserMenu {
 	spacing: 4px;
@@ -415,19 +511,25 @@ StTooltip StLabel {
 
 .status-chooser {
 	spacing: .4em;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(220,220,220,0.1);
+	background-gradient-end: rgba(220,220,220,0.1);
+	border: 1px solid rgba(255,255,255,0.2);
+	border-left-width: 0;
+	border-right-width: 0;
 }
 
 .status-chooser .popup-menu-item,
 .status-chooser-combo .popup-menu-item {
 	padding: .4em;
+	border: 1px solid rgba(0,0,0,0);
 }
 
 .status-chooser-user-icon {
-	border: 1px solid rgba(255,255,255,0.3);
+	border: 1px solid rgba(255,255,255,0.1);
 	border-radius: 0px;
-	width: 32pt;
-	height: 32pt;
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.2);
+	width: 48px;
+	height: 48px;
 }
 
 .status-chooser-user-icon:hover {
@@ -436,7 +538,6 @@ StTooltip StLabel {
 
 .status-chooser-user-name {
 	font-weight: bold;
-	font-size: 9pt;
 	min-width: 120pt;
 }
 
@@ -445,12 +546,12 @@ StTooltip StLabel {
 }
 
 .status-chooser-combo.popup-combo-menu {
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(32,32,32,1.0);
 	padding: .4em 0em;
-	border-radius: 4px;
+	border-radius: 0px;
 	border: 1px solid #5f5f5f;
 	color: #ffffff;
-	font-size: 9pt;
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
 }
 
 .status-chooser-status-item,
@@ -459,14 +560,14 @@ StTooltip StLabel {
 }
 
 .system-status-icon {
-	icon-size: 1.14em;
+	icon-size: 1.09em;
 }
 
 /* Overview */
 
 #overview {
 	spacing: 12px;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(100,100,100,0.3);
 }
 
 .window-caption {
@@ -475,7 +576,7 @@ StTooltip StLabel {
 }
 
 .workspace-controls {
-	visible-width: 6px; /* Amount visible before hovering */
+	visible-width: 32px; /* Amount visible before hovering */
 }
 
 .workspace-thumbnails-background {
@@ -502,20 +603,25 @@ StTooltip StLabel {
 }
 
 .window-caption {
-	background-color: rgba(0,0,0,0.0);
-	border: 0px;
-	border-radius: 0px;
+	background-color: rgba(0,0,0,0.5);
+	border: 1px solid rgba(255,255,255,0.25);
+	border-top-width: 0;
+	border-radius: 0 0 6px 6px;
 	color: #fff;
-	font-size: 9pt;
-	padding: 2px 8px;
-	-shell-caption-spacing: 4px;
+	padding: 6px 8px;
+	-shell-caption-spacing: 1px;
 }
 
 .window-close {
 	background-image: url("close-window.svg");
-	height: 34px;
-	width: 34px;
-	-shell-close-overlap: 20px;
+	background-size: 22px;
+	height: 22px;
+	width: 22px;
+	-shell-close-overlap: 8px;
+}
+
+.window-close:hover {
+	-st-background-image-shadow: 0px 0px 4px rgba(255,255,255,0.9);
 }
 
 .window-close:rtl {
@@ -525,11 +631,9 @@ StTooltip StLabel {
 /* Dash */
 
 #dash {
-	color: white;
+	color: #fff;
 	padding: 6px 0px;
-	background-gradient-direction: horizontal;
-	background-gradient-start: rgba(0,0,0,0.0);
-	background-gradient-end: rgba(0,0,0,0.0);
+	background-color: rgba(0,0,0,0);
 	border: 0px;
 	border-left: 0px;
 }
@@ -545,18 +649,21 @@ StTooltip StLabel {
 	width: 60px;
 }
 
-.dash-placeholder {
+.placeholder {
 	background-image: url("dash-placeholder.svg");
+	background-size: contain;
+	height: 24px;
 }
 
 #viewSelector {
 	spacing: 1em;
-	font-size: 9pt;
 }
 
 #viewSelectorTabBar {
 	padding: 1em;
 }
+
+/* Search Box */
 
 #searchArea {
 	padding: 0px 24px;
@@ -564,74 +671,101 @@ StTooltip StLabel {
 
 #searchEntry {
 	padding: 4px 8px;
-	border-radius: 2px;
-	color: #2c2c2c;
-	border: 1px solid rgba(255,255,255,0.8);
+	border-radius: 3px;
+	color: #c0c0c0;
+	border: 1px solid rgba(200,200,200,0.1);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.7);
-	background-gradient-end: rgba(255,255,255,0.9);
-	box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);
-	selected-color: black;
-	caret-color: rgb(128, 128, 128);
+	background-gradient-start: rgba(0,0,0,0.1);
+	background-gradient-end: rgba(0,0,0,0.1);
+	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.4);
+	selected-color: white;
+	caret-color: white;
 	caret-size: 1px;
-	height: 16px;
 	width: 250px;
 }
 
 #searchEntry:focus,
 #searchEntry:hover {
-	color: rgba(90,90,90,0.7);
-	border: 1px solid rgba(255,255,255,0.8);
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.85);
-	background-gradient-end: rgba(255,255,255,1.0);
-	box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);
+	color: white;
+	border: 1px solid rgba(200,200,200,0.3);
 }
 
 #searchEntry:focus {
-	color: #2c2c2c;
-	border: 1px solid rgba(255,255,255,0.8);
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.85);
-	background-gradient-end: rgba(255,255,255,1.0);
-	box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);
+	color: white;
+	border: 1px solid rgba(200,200,200,0.3);
 }
 
 .search-entry-icon {
 	icon-size: 1em;
-	color: #222;
+	color: #c0c0c0;
 }
+
+/* View Tabs */
 
 .view-tab-title {
 	color: rgba(255,255,255,0.7);
-	font: 8pt;
 	font-weight: bold;
 	padding: 0px 12px;
-	height: 24px;
+	height: 2.0em;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.0);
-	background-gradient-end: rgba(255,255,255,0.0);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.0);
-	border: 0px solid rgba(0,0,0,0.15);
+	background-gradient-start: rgba(255,255,255,0.15);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 0;
+}
+
+.view-tab-title:first-child {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.15);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border-radius: 3px 0 0 3px;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-right-width: 0;
+}
+
+.view-tab-title:nth-child {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.15);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border-radius: 0;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-right-width: 0;
+	border-left-width: 0;
+}
+
+.view-tab-title:last-child {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.15);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border-radius: 0 3px 3px 0;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-left-width: 0;
 }
 
 .view-tab-title:hover {
-	color: rgba(189,210,228,1.0);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.2);
+	background-gradient-end: rgba(255,255,255,0.1);
+	color: white;
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.25);
 }
 
-.view-tab-title:selected {
-	color: rgba(255,255,255,0.9);
-	font: 8pt;
-	font-weight: bold;
-	height: 24px;
-	padding: 0px 12px;
+.view-tab-title:selected,
+.view-tab-title:nth-child:selected,
+.view-tab-title:first-child:selected,
+.view-tab-title:last-child:selected {
+	color: white;
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(162,184,202,0.9);
 	background-gradient-end: rgba(117,145,169,0.9);
 	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.2);
-	border: 1px solid rgba(0,0,0,0.15);
-	border-radius: 3px;
 }
+
+/* Search Results */
 
 #searchResults {
 	padding: 20px 10px 10px 10px;
@@ -653,11 +787,13 @@ StTooltip StLabel {
 	padding: 4px 12px;
 	spacing: 4px;
 	color: #fff;
-	font-size: 9pt;
+	border-radius: 2px;
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgba(0,0,0,0.3);
+	background-gradient-end: rgba(0,0,0,0);
 }
 
 .search-section-results {
-	color: #ffffff;
 	padding: 6px;
 }
 
@@ -677,51 +813,45 @@ StTooltip StLabel {
  * padding compensates for this and ensures that the label is vertically
  * centered */
 .dash-search-button {
-	border: 1px solid rgba(255,255,255,0.09);
+	border-width: 1px;
+	border-color: rgba(255,255,255,0.2);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(20,20,20,0.8);
-	background-gradient-end: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
-	border-radius: 3px;
+	background-gradient-start: rgba(255,255,255,0.2);
+	background-gradient-end: rgba(255,255,255,0.08);
 	padding-top: 4px;
 	padding-bottom: 5px;
-	width: 300px;
+	width: 200px;
 	font-weight: bold;
+	border-radius: 2px;
 }
 
-.dash-search-button:selected,
-.dash-search-button:hover {
-	border: 1px solid rgba(255,255,255,0.2);
+.dash-search-button:hover,
+.dash-search-button:focus,
+.dash-search-button:selected {
+	border-color: rgba(255,255,255,0.3);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(30,30,30,0.8);
-	background-gradient-end: rgba(10,10,10,0.8);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
-	border-radius: 3px;
-	padding-top: 4px;
-	padding-bottom: 5px;
-	width: 300px;
-	font-weight: bold;
+	background-gradient-start: rgba(255,255,255,0.25);
+	background-gradient-end: rgba(255,255,255,0.18);
 }
 
-.dash-search-button-label {
-	color: white;
-	font-size: 9pt;
+.dash-label {
+	border-radius: 2px;
+	padding: 4px 12px;
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+	-x-offset: 8px;
 }
 
-/* Apps */
+/* Application Launchers and Grid */
 
 .icon-grid {
 	spacing: 36px;
-	-shell-grid-item-size: 70px; /* was 118px */
-}
-
-.contact-grid {
-	spacing: 36px;
-	-shell-grid-item-size: 272px; /* 2 * -shell-grid-item-size + spacing */
+	-shell-grid-horizontal-item-size: 70px; /* was 118px */
+	-shell-grid-vertical-item-size: 70px; /* was 118px */
 }
 
 .icon-grid .overview-icon {
-	icon-size: 48px;
+	icon-size: 48px; /* was 96px */
 }
 
 .all-app {
@@ -735,8 +865,7 @@ StTooltip StLabel {
 }
 
 .app-filter {
-	font-size: 9pt;
-	font-weight: bold;
+	font-weight: normal;
 	height: 2.85em;
 	color: white;
 	width: 200px;
@@ -745,7 +874,7 @@ StTooltip StLabel {
 }
 
 .app-filter:hover {
-	color: rgba(189,210,228,1.0);
+	color: white;
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(255,255,255,0.12);
 	background-gradient-end: rgba(255,255,255,0.05);
@@ -774,7 +903,7 @@ StTooltip StLabel {
 }
 
 .app-filter:focus {
-	outline: 1px solid rgba(189,210,228,1.0);
+	outline: 1px solid rgba(140,200,255,1.0);
 }
 
 .dash-item-container > .app-well-app {
@@ -796,53 +925,8 @@ StTooltip StLabel {
 	border-radius: 4px;
 	padding: 3px;
 	border: 1px rgba(0,0,0,0);
-	font-size: 9pt;
 	color: white;
 	text-align: center;
-}
-
-.contact {
-	width: 272px; /* Same width as two normal results + spacing */
-	height: 118px; /* Aspect ratio = 1.75. Normal US business card ratio */
-	border-radius: 3px;
-	padding: 3px;
-	border: 1px rgba(0,0,0,0);
-}
-
-.contact-content {
-	padding: 8px;
-	width: 232px;
-	height: 84px;
-	color: white;
-	text-align: center;
-	border: 1px solid rgba(255,255,255,0.4);
-	background-color: rgba(0,0,0,0.8);
-	border-radius: 0px;
-}
-
-.contact-icon {
-	border-radius: 0px;
-}
-
-.contact-details {
-	padding: 6px 8px 11px 8px;
-}
-
-.contact-details-alias {
-	font-size: 9pt;
-	padding-bottom: 11px;
-}
-
-.contact-details-status {
-	font-size: 9pt;
-}
-
-.contact-details-status-icon {
-	padding-right: 2px;
-}
-
-.contact:hover {
-	background-color: rgba(255,255,255,0.0);
 }
 
 .app-well-app.running > .overview-icon {
@@ -857,33 +941,9 @@ StTooltip StLabel {
 
 .app-well-app.running:hover > .overview-icon {
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(162,184,202,0.8);
-	background-gradient-end: rgba(117,145,169,0.8);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.5);
-	border: 1px solid rgba(0,0,0,0.15);
-	border-radius: 3px;
-	padding: 3px;
-}
-
-.contact:selected,
-.app-well-app:selected > .overview-icon,
-.search-result-content:selected > .overview-icon {
-	background-gradient-direction: vertical;
 	background-gradient-start: rgba(162,184,202,0.9);
 	background-gradient-end: rgba(117,145,169,0.9);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.3);
-	border: 1px solid rgba(0,0,0,0.15);
-	border-radius: 3px;
-	padding: 3px;
-}
-
-.contact:selected:hover,
-.app-well-app:selected:hover > .overview-icon,
-.search-result-content:selected:hover > .overview-icon {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(162,184,202,0.8);
-	background-gradient-end: rgba(117,145,169,0.8);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.5);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.6);
 	border: 1px solid rgba(0,0,0,0.15);
 	border-radius: 3px;
 	padding: 3px;
@@ -901,30 +961,78 @@ StTooltip StLabel {
 	padding: 3px;
 }
 
-.contact:focus,
-.app-well-app:focus > .overview-icon,
-.search-result-content:focus > .overview-icon {
-	border: 1px solid #cccccc;
+/* Contacts */
+
+.contact-grid {
+	spacing: 36px;
+	-shell-grid-horizontal-item-size: 272px; /* 2 * -shell-grid-horizontal-item-size + spacing */
+	-shell-grid-vertical-item-size: 118px;
 }
 
-.app-well-menu {
-	font-size: 9pt;
+.contact {
+	width: 272px; /* Same width as two normal results + spacing */
+	height: 118px; /* Aspect ratio = 1.75. Normal US business card ratio */
+	border-radius: 3px;
+	padding: 3px;
+	border: 1px rgba(0,0,0,0);
+}
+
+.contact-content {
+	padding: 8px;
+	width: 232px;
+	height: 84px;
+	color: white;
+	text-align: center;
+	border: 2px solid rgba(255,255,255,0.3);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(48,48,48,0.9);
+	background-gradient-end: rgba(32,32,32,0.9);
+	border-radius: 0px;
+}
+
+.contact-icon {
+	border-radius: 0px;
+}
+
+.contact-details {
+	padding: 0px 6px 22px 10px;
+}
+
+.contact-details-alias {
+	padding-bottom: 8px;
+}
+
+.contact-details-status-icon {
+	padding-right: 4px;
+}
+
+.contact:hover {
+	background-color: rgba(255,255,255,0.0);
+}
+
+.contact:focus,
+.app-well-app:focus > .overview-icon,
+.search-result-content:focus > .overview-icon,
+.contact:selected,
+.app-well-app:selected > .overview-icon,
+.search-result-content:selected > .overview-icon {
+	background-color: rgba(255,255,255,0.33);
 }
 
 /* LookingGlass */
 
 #LookingGlassDialog {
-	background-color: rgba(0,0,0,0.85);
-	spacing: 4px;
+	border: 0;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	spacing: 8px;
 	padding: 4px;
-	border: 1px solid gray;
-	border-radius: 0px;
-	color: #fff;
 }
 
 #LookingGlassDialog > #Toolbar {
 	border: 1px solid grey;
-	border-radius: 4px;
+	border-radius: 2px;
 }
 
 #LookingGlassDialog .labels {
@@ -932,17 +1040,24 @@ StTooltip StLabel {
 }
 
 #LookingGlassDialog .notebook-tab {
-	padding: 2px;
+	-natural-hpadding: 12px;
+	-minimum-hpadding: 6px;
+	font-weight: bold;
+	color: #ccc;
+	padding-left: .3em;
+	padding-right: .3em;
 }
 
 #LookingGlassDialog .notebook-tab:hover {
-	color: #00ff00;
+	color: white;
+	text-shadow: black 0px 2px 2px;
 }
 
 #LookingGlassDialog .notebook-tab:selected {
-	border: 1px solid #88ff66;
-	border-radius: 4px;
-	padding: 5px;
+	border-image: url("panel-button-border.svg") 10 10 0 2;
+	background-image: url("panel-button-highlight-wide.svg");
+	color: white;
+	text-shadow: black 0px 2px 2px;
 }
 
 #LookingGlassDialog .lg-inspector-title {
@@ -950,14 +1065,14 @@ StTooltip StLabel {
 	padding-bottom: 8px;
 }
 
-.lg-dialog StLabel {
-	color: #88ff66;
+.lg-dialog StEntry {
+	selection-background-color: #bbbbbb;
+	selected-color: #333333;
 }
 
-.lg-dialog StEntry {
-	color: #88ff66;
-	selection-background-color: #88ff66;
-	selected-color: black;
+.lg-completions-text {
+	font-size: .9em;
+	font-style: italic;
 }
 
 .lg-obj-inspector-title {
@@ -965,21 +1080,21 @@ StTooltip StLabel {
 }
 
 .lg-obj-inspector-button {
-	border: 1px solid #88ff66;
+	border: 1px solid gray;
 	padding: 4px;
 	border-radius: 4px;
 }
 
 .lg-obj-inspector-button:hover {
-	border: 1px solid #00ff00;
+	border: 1px solid #ffffff;
 }
 
 .lg-dialog .shell-link {
-	color: #88ff66;
+	color: #999999;
 }
 
 .lg-dialog .shell-link:hover {
-	color: #00ff00;
+	color: #dddddd;
 }
 
 #LookingGlassDialog StBoxLayout#EvalBox {
@@ -1010,16 +1125,15 @@ StTooltip StLabel {
 	font-weight: bold;
 }
 
-.lg-extension-actions {
+.lg-extension-meta {
 	spacing: 6px;
 }
 
 #LookingGlassPropertyInspector {
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(0, 0, 0, 0.8);
 	border: 2px solid grey;
 	border-radius: 4px;
 	padding: 6px;
-	color: #88ff66;
 }
 
 /* Calendar popup */
@@ -1036,13 +1150,13 @@ StTooltip StLabel {
 }
 
 #calendarPopup {
-	border: 2px solid rgba(255,255,255,0.4);
+	border: 2px solid rgba(255,255,255,0.6);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.8);
-	background-gradient-end: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	border-radius: 0px;
 	color: white;
-	border-radius: 4px;
 }
 
 #calendarPopup .calendar {
@@ -1057,7 +1171,6 @@ StTooltip StLabel {
 
 .calendar-month-label {
 	color: #e2e2e2;
-	font-size: 7.5pt;
 	padding-bottom: 8px;
 	padding-top: 8px;
 	font-weight: bold;
@@ -1067,7 +1180,7 @@ StTooltip StLabel {
 	width: 18px;
 	height: 12px;
 	background-image: url("calendar-arrow-left.svg");
-	border-radius: 0px;
+	border-radius: 4px;
 }
 
 .calendar-change-month-back:rtl {
@@ -1085,7 +1198,7 @@ StTooltip StLabel {
 	width: 18px;
 	height: 12px;
 	background-image: url("calendar-arrow-right.svg");
-	border-radius: 0px;
+	border-radius: 4px;
 }
 
 .calendar-change-month-forward:rtl {
@@ -1101,13 +1214,11 @@ StTooltip StLabel {
 
 .datemenu-date-label {
 	padding: .4em 1.75em;
-	font-size: 9pt;
 	color: #e2e2e2;
 	font-weight: bold;
 }
 
 .calendar-day-base {
-	font-size: 7.5pt;
 	text-align: center;
 	width: 2.4em;
 	height: 2.4em;
@@ -1119,7 +1230,17 @@ StTooltip StLabel {
 }
 
 .calendar-day-base:active {
-	background-color: rgba(255,255,255,0.3);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.2);
+	background-gradient-end: rgba(255,255,255,0.2);
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.1);
+}
+
+.calendar-today.calendar-day-base:active {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.4);
+	background-gradient-end: rgba(255,255,255,0.4);
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.2);
 }
 
 .calendar-day-heading {
@@ -1139,6 +1260,7 @@ StTooltip StLabel {
 	border-top-width: 0;
 	border-left-width: 0;
 	border-radius: 0px;
+	width: 32px;
 }
 .calendar-day-top {
 	border-top-width: 1px;
@@ -1148,14 +1270,19 @@ StTooltip StLabel {
 }
 
 .calendar-work-day {
+	border-color: #444;
 }
 
 .calendar-nonwork-day {
 	background-color: rgba(128,128,128,.1);
+	border-color: #555;
 }
 
 .calendar-today {
-	background-color: #999;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.4);
+	background-gradient-end: rgba(255,255,255,0.4);
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.2);
 	color: #ffffff;
 	font-weight: bold;
 }
@@ -1184,7 +1311,6 @@ StTooltip StLabel {
 }
 
 .events-day-header {
-	font-size: 9pt;
 	font-weight: bold;
 	color: #e2e2e2;
 	padding-left: 1.8em;
@@ -1197,7 +1323,6 @@ StTooltip StLabel {
 }
 
 .events-day-dayname {
-	font-size: 9pt;
 	color: #e2e2e2;
 	text-align: left;
 }
@@ -1207,7 +1332,6 @@ StTooltip StLabel {
 }
 
 .events-day-time {
-	font-size: 9pt;
 	color: #fff;
 	text-align: right;
 }
@@ -1217,7 +1341,6 @@ StTooltip StLabel {
 }
 
 .events-day-task {
-	font-size: 9pt;
 	color: #e2e2e2;
 }
 
@@ -1244,27 +1367,20 @@ StTooltip StLabel {
 
 /* Message Tray */
 #message-tray {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.1);
-	background-gradient-end: rgba(0,0,0,0.4);
-	box-shadow: inset 0px 1px 0px rgba(255,255,255,0.15);
+	background-color: rgba(0,0,0,0.0);
+	border: 0px;
 	border-radius: 0px;
-	border-bottom: 0px;
-	border-left: 0px;
-	border-right: 0px;
-	color: white; 
+	color: white;
 	height: 36px;
 }
 
 #notification {
-	border: 2px solid rgba(255,255,255,0.4);
+	border: 2px solid rgba(255,255,255,0.5);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.8);
-	background-gradient-end: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	border-radius: 0;
 	border-bottom: 0px;
-	font-size: 9pt;
-	border-radius: 4px 4px 0 0;
 	padding: 8px 8px 4px 8px;
 	spacing-rows: 10px;
 	spacing-columns: 10px;
@@ -1284,25 +1400,30 @@ StTooltip StLabel {
 }
 
 .summary-boxpointer {
-	border: 2px solid rgba(255,255,255,0.4);
+	-arrow-border-radius: 0px;
+	-arrow-background-color: rgba(0,0,0,0.0);
+	-arrow-border-width: 0px;
+	-arrow-border-color: rgba(255,255,255,0.0);
+	-arrow-base: 4px;
+	-arrow-rise: 2px;
+	border: 2px solid rgba(255,255,255,0.6);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.8);
-	background-gradient-end: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
-	border-radius: 4px;
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	border-radius: 0;
 	color: white;
 }
 
 .summary-boxpointer #notification {
-	border: 0px solid rgba(255,255,255,0.0);
-	border-radius: 4px;
+	border: 0px;
+	border-radius: 0px;
 	border-bottom: 0px;
-	background: rgba(22,22,22,0.0) !important;
+	background: rgba(32,32,32,1.0) !important;
 	padding-bottom: 12px;
 }
 
 .summary-boxpointer #summary-right-click-menu {
-	font-size: 9pt;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
@@ -1327,6 +1448,7 @@ StTooltip StLabel {
 
 #notification-scrollview {
 	max-height: 10em;
+	-st-vfade-offset: 24px;
 }
 
 #notification-scrollview > .top-shadow, #notification-scrollview > .bottom-shadow {
@@ -1351,12 +1473,42 @@ StTooltip StLabel {
 
 .notification-button {
 	border-radius: 2px;
-	font-size: 9pt;
-	padding: 2px 14px; /* 4px 42px 5px; */
+	border-width: 1px;
+	border-color: rgba(78,78,78,0.9);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(58,58,58,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	padding: 4px 42px 5px;
+}
+
+.notification-button:hover {
+	border-color: rgba(98,98,98,0.9);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(68,68,68,1.0);
+	background-gradient-end: rgba(58,58,58,1.0);
+}
+
+.notification-button:active,
+.notification-button:pressed {
+	border-color: rgba(98,98,98,0.4);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(28,28,28,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: inset 0px 1px 5px rgba(0,0,0,0.35);
+}
+
+.notification-button:active:hover,
+.notification-button:pressed:hover {
+	border-color: rgba(98,98,98,0.4);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(28,28,28,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
 }
 
 .notification-button:focus {
 	padding: 3px 41px 4px;
+	box-shadow: 0px 0px 2px 1px rgba(117,145,169,0.9);
 }
 
 .notification-icon-button {
@@ -1370,6 +1522,7 @@ StTooltip StLabel {
 
 .notification-icon-button > StIcon {
 	icon-size: 16px;
+	padding: 8px;
 }
 
 .hotplug-transient-box {
@@ -1379,8 +1532,7 @@ StTooltip StLabel {
 
 .hotplug-notification-item {
 	padding: 2px 10px;
-	border-radius: 4px;
-	font-size: 9pt;
+	border-radius: 18px;
 }
 
 .hotplug-notification-item:focus {
@@ -1439,9 +1591,8 @@ StTooltip StLabel {
 	padding: 8px 0;
 }
 
-.chat-sent {
+.chat-received {
 	padding-left: 4px;
-	border-radius: 4px;
 }
 
 .chat-received:rtl {
@@ -1451,8 +1602,7 @@ StTooltip StLabel {
 
 .chat-sent {
 	padding-left: 18pt;
-	border-radius: 4px;
-	color: #7E7E7E;
+	color: #959595;
 }
 
 .chat-sent:rtl {
@@ -1462,8 +1612,6 @@ StTooltip StLabel {
 
 .chat-meta-message {
 	padding-left: 4px;
-	border-radius: 4px;
-	font-size: 9pt;
 	color: #bbbbbb;
 }
 
@@ -1478,27 +1626,21 @@ StTooltip StLabel {
 
 #notification StEntry {
 	padding: 4px;
-	selected-color: black;
-	color: white;
-	border: 1px solid rgba(0,0,0,0.6);
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(60,60,60,0.4);
-	background-gradient-end: rgba(90,90,90,0.6);
-	box-shadow: inset 0px -1px 1px 0px rgba(255,255,255,0.2);
-	border-radius: 3px;
-	caret-color: #a8a8a8;
+	selected-color: white;
+	color: #c0c0c0;
+	border: 1px solid rgba(200,200,200,0.12);
+	background-color: rgba(0,0,0,0.3);
+	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.5);
+	border-radius: 2px;
+	caret-color: white;
 	caret-size: 1px;
 }
 
 #notification StEntry:focus {
 	color: white;
-	border: 1px solid rgba(0,0,0,0.6);
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(60,60,60,0.4);
-	background-gradient-end: rgba(90,90,90,0.6);
-	box-shadow: inset 0px -1px 1px 0px rgba(255,255,255,0.2);
+	border: 1px solid rgba(200,200,200,0.3);
 
-	caret-color: #545454;
+	caret-color: white;
 	selection-background-color: #808080;
 }
 
@@ -1518,26 +1660,32 @@ StTooltip StLabel {
 #summary-mode {
 	padding: 2px 0px 0px 4px;
 	height: 36px;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 6px 0 0 0;
 }
 
 #summary-mode:rtl {
 	padding: 2px 4px 0px 0px;
 }
 
-.summary-source-button {
-	color: #fff;
-}
-
 .summary-source-button:ltr {
 	padding-right: 12px;
 }
 
+.summary-source-button .summary-source {
+	border: 1px solid rgba(255,255,255,0.0);
+	border-top-width: 0;
+	border-bottom-width: 0;
+}
+
 .summary-source-button:selected .summary-source {
+	border: 1px solid rgba(255,255,255,0.25);
+	border-top-width: 0;
+	border-bottom-width: 0;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.2);
-	background-gradient-end: rgba(255,255,255,0.08);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.06);
-	border-radius: 0px;
+	background-gradient-start: rgba(255,255,255,0.0);
+	background-gradient-end: rgba(255,255,255,0.2);
+	border-radius: 0;
 }
 
 .summary-source-button:expanded:selected .summary-source {
@@ -1569,15 +1717,12 @@ StTooltip StLabel {
 .summary-source-counter {
 	color: white;
 	background-color: #3465A4;
-	font-size: 9pt;
 	border-radius: 1em;
 	min-height: 1em;
 	min-width: 1em;
 }
 
 .source-title {
-	font-size: 9pt;
-	font-weight: bold;
 	padding-left: 4px;
 }
 
@@ -1593,15 +1738,14 @@ StTooltip StLabel {
 }
 
 .switcher-list {
-	border: 2px solid rgba(255,255,255,0.4);
+	border: 2px solid rgba(255,255,255,0.6);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.8);
-	background-gradient-end: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
-	border-radius: 4px;
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	border-radius: 0;
 	padding: 20px;
-	font-size: 9pt;
-	color: rgba(255,255,255,1.0);
+	color: white;
 }
 
 .switcher-list-item-container {
@@ -1610,8 +1754,8 @@ StTooltip StLabel {
 
 .thumbnail-scroll-gradient-left {
 	background-gradient-direction: horizontal;
-	background-gradient-start: rgba(51, 51, 51, 1.0);
-	background-gradient-end: rgba(51, 51, 51, 0);
+	background-gradient-start: rgba(51,51,51,1.0);
+	background-gradient-end: rgba(51,51,51,0);
 	border-radius: 24px;
 	border-radius-topright: 0px;
 	border-radius-bottomright: 0px;
@@ -1620,8 +1764,8 @@ StTooltip StLabel {
 
 .thumbnail-scroll-gradient-right {
 	background-gradient-direction: horizontal;
-	background-gradient-start: rgba(51, 51, 51, 0);
-	background-gradient-end: rgba(51, 51, 51, 1.0);
+	background-gradient-start: rgba(51,51,51,0);
+	background-gradient-end: rgba(51,51,51,1.0);
 	border-radius: 24px;
 	border-radius-topleft: 0px;
 	border-radius-bottomleft: 0px;
@@ -1670,6 +1814,7 @@ StTooltip StLabel {
 	width: 52px;
 	height: 52px;
 	background-image: url("corner-ripple-ltr.png");
+	background-size: contain;
 }
 
 .ripple-box:rtl {
@@ -1678,7 +1823,7 @@ StTooltip StLabel {
 
 .switcher-arrow {
 	border-color: rgba(0,0,0,0);
-	color: #e2e2e2;
+	color: #808080;
 }
 
 .switcher-arrow:highlighted {
@@ -1731,14 +1876,22 @@ StTooltip StLabel {
 }
 
 /* Modal Dialogs */
+
+/* Dialog Subject Text Style */
+.show-processes-dialog-subject,
+.mount-question-dialog-subject,
+.end-session-dialog-subject {
+	font-weight: bold;
+	color: #fff;
+}
+
 .modal-dialog {
-	font-size: 9pt;
-	border-radius: 4px;
-	border: 2px solid rgba(255,255,255,0.4);
+	border: 2px solid rgba(255,255,255,0.6);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.8);
-	background-gradient-end: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	border-radius: 0;
 	color: #fff;
 
 	padding-right: 42px;
@@ -1749,73 +1902,56 @@ StTooltip StLabel {
 
 .modal-dialog-button-box {
 	spacing: 21px;
+	padding-top: 50px;
 }
 
 .modal-dialog-button {
 	border-radius: 2px;
-	font-size: 9pt;
-	color: #2c2c2c;
-
+	color: #fff;
 	margin-left: 10px;
 	margin-right: 10px;
 	padding: 4px 32px 5px;
-	border: 0px solid rgba(255,255,255,0.0);
-	box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);
+	border-width: 1px;
+	border-color: rgba(78,78,78,0.9);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(232,232,232,1.0);
-	background-gradient-end: rgba(212,212,212,1.0);
+	background-gradient-start: rgba(58,58,58,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
 }
 
 .modal-dialog-button:active,
 .modal-dialog-button:pressed {
-	border: 0px solid rgba(255,255,255,0.0);
-	box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.2);
+	border-color: rgba(98,98,98,0.4);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(180,180,180,1.0);
-	background-gradient-end: rgba(212,212,212,1.0);
+	background-gradient-start: rgba(28,28,28,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: inset 0px 1px 5px rgba(0,0,0,0.35);
 }
 
 .modal-dialog-button:active:hover,
 .modal-dialog-button:pressed:hover {
-	border: 0px solid rgba(255,255,255,0.0);
-	box-shadow: inset 0px 0px 1px 2px rgba(0,0,0,0.2);
+	border-color: rgba(98,98,98,0.4);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(180,180,180,1.0);
-	background-gradient-end: rgba(212,212,212,1.0);
+	background-gradient-start: rgba(28,28,28,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
 }
 
 .modal-dialog-button:hover {
-	border: 0px solid rgba(255,255,255,0.0);
-	box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);
+	border-color: rgba(98,98,98,0.9);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(245,245,245,1.0);
-	background-gradient-end: rgba(232,232,232,1.0);
+	background-gradient-start: rgba(68,68,68,1.0);
+	background-gradient-end: rgba(58,58,58,1.0);
 }
 
 .modal-dialog-button:disabled {
-	color: rgb(60, 60, 60);
+	color: rgb(60,60,60);
 }
 
 .modal-dialog-button:focus {
-	border: 0px solid rgba(255,255,255,0.0);
-	box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(245,245,245,1.0);
-	background-gradient-end: rgba(232,232,232,1.0);
-	padding: 3px 31px 4px;
+	box-shadow: 0px 0px 2px 1px rgba(117,145,169,0.9);
 }
 
 /* Run Dialog */
-.run-dialog-label {
-	font-size: 9pt;
-	color: white;
-	padding-bottom: 6px;
-}
-
-.run-dialog-error-label {
-	font-size: 9pt;
-	color: white;
-}
 
 .run-dialog-error-box {
 	padding-top: 15px;
@@ -1823,28 +1959,28 @@ StTooltip StLabel {
 }
 
 .run-dialog-entry {
-	font-size: 9pt;
 	font-weight: normal;
 	width: 23em;
-	selection-background-color: white;
-	selected-color: #2c2c2c;
-	border-radius: 0px;
+	selection-background-color: black;
+	selected-color: white;
+	border-radius: 2px;
 	padding: 4px;
-	color: #2c2c2c;
-	border: 1px solid rgba(255,255,255,0.8);
+	color: white;
+	border: 1px solid rgba(200,200,200,0.12);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.7);
-	background-gradient-end: rgba(255,255,255,0.9);
-	box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.5);
+	background-gradient-start: rgba(0,0,0,0.3);
+	background-gradient-end: rgba(0,0,0,0.3);
+	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.5);
+	caret-size: 1px;
 }
 
 .run-dialog {
-	border-radius: 4px;
-	border: 2px solid rgba(255,255,255,0.4);
+	border: 2px solid rgba(255,255,255,0.5);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.8);
-	background-gradient-end: rgba(0,0,0,0.8);
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
 	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
+	border-radius: 0;
 
 	padding-right: 21px;
 	padding-left: 21px;
@@ -1856,13 +1992,16 @@ StTooltip StLabel {
 	background-color: rgba(160,160,160,0.0);
 }
 
+.flashspot {
+	background-color: white;
+}
+
 /* End Session Dialog */
 .end-session-dialog {
 	spacing: 42px;
 }
 
 .end-session-dialog-subject {
-	font-size: 9pt;
 	font-weight: bold;
 	color: #fff;
 	padding-top: 10px;
@@ -1876,8 +2015,6 @@ StTooltip StLabel {
 }
 
 .end-session-dialog-description {
-	font-size: 9pt;
-	color: white;
 	padding-left: 17px;
 	width: 28em;
 }
@@ -1887,19 +2024,19 @@ StTooltip StLabel {
 }
 
 .end-session-dialog-logout-icon {
-	border: 2px solid #8b8b8b;
-	border-radius: 5px;
+	border: 1px solid rgba(255,255,255,0.3);
+	border-radius: 0;
 	width: 32px;
 	height: 32px;
 }
 
 .end-session-dialog-shutdown-icon {
+	color: #bebebe;
 	width: 32px;
 	height: 32px;
 }
 
 .end-session-dialog-app-list {
-	font-size: 9pt;
 	max-height: 200px;
 	padding-top: 42px;
 	padding-left: 49px;
@@ -1936,11 +2073,9 @@ StTooltip StLabel {
 }
 
 .end-session-dialog-app-list-item-name {
-	font-size: 9pt;
 }
 
 .end-session-dialog-app-list-item-description {
-	font-size: 9pt;
 	color: #444444;
 }
 
@@ -1960,12 +2095,13 @@ StTooltip StLabel {
 
 .show-processes-dialog-subject,
 .mount-question-dialog-subject {
-	font-size: 9pt;
-	font-weight: bold;
-	color: #666666;
 	padding-top: 10px;
 	padding-left: 17px;
 	padding-bottom: 6px;
+}
+
+.mount-question-dialog-subject {
+	max-width: 500px;
 }
 
 .show-processes-dialog-subject:rtl,
@@ -1976,8 +2112,6 @@ StTooltip StLabel {
 
 .show-processes-dialog-description,
 .mount-question-dialog-description {
-	font-size: 9pt;
-	color: white;
 	padding-left: 17px;
 	width: 28em;
 }
@@ -1988,7 +2122,6 @@ StTooltip StLabel {
 }
 
 .show-processes-dialog-app-list {
-	font-size: 9pt;
 	max-height: 200px;
 	padding-top: 24px;
 	padding-left: 49px;
@@ -2025,34 +2158,77 @@ StTooltip StLabel {
 }
 
 .show-processes-dialog-app-list-item-name {
-	font-size: 9pt;
 }
 
-/* PolicyKit Authentication Dialog */
-.polkit-dialog {
+/* Password or Authentication Dialog */
+.prompt-dialog {
 	/* this is the width of the entire modal popup */
 	width: 500px;
 }
 
-.polkit-dialog-main-layout {
+.prompt-dialog-main-layout {
 	spacing: 24px;
 	padding: 10px;
 }
 
-.polkit-dialog-message-layout {
+.prompt-dialog-message-layout {
 	spacing: 16px;
 }
 
-.polkit-dialog-headline {
-	font-size: 9pt;
+.prompt-dialog-headline {
 	font-weight: bold;
 	color: #666666;
 }
 
-.polkit-dialog-description {
-	font-size: 9pt;
+.prompt-dialog-password-label:ltr {
+	padding-right: 0.5em;
+}
+
+.prompt-dialog-password-label:rtl {
+	padding-left: 0.5em;
+}
+
+.prompt-dialog-password-entry {
+	selected-color: white;
+	border-radius: 0;
+
+	color: white;
+	border: 1px solid rgba(200,200,200,0.12);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0,0,0,0.3);
+	background-gradient-end: rgba(0,0,0,0.3);
+	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.5);
+	caret-size: 1px;
+	caret-color: white;
+	padding: 2px;
+}
+
+.prompt-dialog-password-entry:focus {
 	color: white;
 }
+
+.prompt-dialog-password-entry .capslock-warning {
+	icon-size: 16px;
+	warning-color: #999;
+	padding: 0 4px;
+}
+
+.prompt-dialog-error-label {
+	color: #ffff00;
+	padding-bottom: 8px;
+}
+
+.prompt-dialog-info-label {
+	padding-bottom: 8px;
+}
+
+/* intentionally left transparent to avoid dialog changing size */
+.prompt-dialog-null-label {
+	color: rgba(0,0,0,0);
+	padding-bottom: 8px;
+}
+
+/* Polkit Dialog */
 
 .polkit-dialog-user-layout {
 	padding-left: 10px;
@@ -2068,54 +2244,13 @@ StTooltip StLabel {
 	color: #ff0000;
 }
 
-.polkit-dialog-password-label:ltr {
-	padding-right: 0.5em;
-}
-
-.polkit-dialog-password-label:rtl {
-	padding-left: 0.5em;
-}
-
-.polkit-dialog-password-entry {
-	background-gradient-start: rgb(236,236,236);
-	background-gradient-end: white;
-	background-gradient-direction: vertical;
-	color: black;
-	border-radius: 5px;
-	border: 2px solid #555753;
-}
-
-.polkit-dialog-password-entry:focus {
-	border: 2px solid #3465a4;
-}
-
-.polkit-dialog-error-label {
-	font-size: 9pt;
-	color: #ffff00;
-	padding-bottom: 8px;
-}
-
-.polkit-dialog-info-label {
-	font-size: 9pt;
-	padding-bottom: 8px;
-}
-
-/* intentionally left transparent to avoid dialog changing size */
-.polkit-dialog-null-label {
-	font-size: 9pt;
-	color: rgba(0,0,0,0);
-	padding-bottom: 8px;
-}
-
-.network-dialog-show-password-checkbox {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	font-size: 9pt;
-	color: white;
-	spacing: 10px;
-}
+/* Network Agent Dialog */
 
 .network-dialog-secret-table {
+	spacing-rows: 15px;
+}
+
+.keyring-dialog-control-table {
 	spacing-rows: 15px;
 }
 
@@ -2147,19 +2282,19 @@ StTooltip StLabel {
 .keyboard-key {
 	min-height: 30px;
 	min-width: 30px;
-	background-gradient-start: rgba(255,245,245,0.4);
-	background-gradient-end: rgba(105,105,105,0.1);
 	background-gradient-direction: vertical;
-	font-size: 9pt;
+	background-gradient-start: rgba(78,78,78,0.5);
+	background-gradient-end: rgba(78,78,78,0.5);
+	font-size: 14pt;
 	font-weight: bold;
-	border-radius: 10px;
-	border: 2px solid #a0a0a0;
+	border-radius: 2px;
+	border: 1px solid rgba(78,78,78,0.9);
 	color: white;
 }
 
 .keyboard-key:grayed {
-   color: #808080;
-   border-color: #808080;
+	color: #808080;
+	border-color: #808080;
 }
 
 .keyboard-key:checked,

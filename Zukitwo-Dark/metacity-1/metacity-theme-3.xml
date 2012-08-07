@@ -15,9 +15,9 @@
 <constant name="C_border_attached_focused" value="shade/gtk:bg[NORMAL]/0.25" />
 <constant name="C_titlebar_focused_hilight" value="shade/#6C6C6C/1.15" />
 <constant name="C_titlebar_unfocused" value="#4C4C4C" />
-<constant name="C_title_focused" value="blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.1" />
-<constant name="C_title_focused_hilight" value="gtk:custom(wm_title_highlight,gtk:base[NORMAL])" />
-<constant name="C_title_unfocused" value="blend/gtk:text[NORMAL]/gtk:bg[NORMAL]/0.7" />
+<constant name="C_title_focused" value="#f7f7f7" />
+<constant name="C_title_focused_hilight" value="#2c2c2c" />
+<constant name="C_title_unfocused" value="#bbbbbb" />
 <!-- color of the button icons -->
 <constant name="D_icons_unfocused_offset" value="0" /> <!-- offset of the unfocused icons -->
 <!-- geometries -->
@@ -26,8 +26,8 @@
 	<distance name="left_width" value="1" />
 	<distance name="right_width" value="1" />
 	<distance name="bottom_height" value="1" />
-	<distance name="left_titlebar_edge" value="6"/>
-	<distance name="right_titlebar_edge" value="6"/>
+	<distance name="left_titlebar_edge" value="5"/>
+	<distance name="right_titlebar_edge" value="5"/>
 	<distance name="title_vertical_pad" value="11"/>
 	<border name="title_border" left="10" right="10" top="1" bottom="0"/>
 	<border name="button_border" left="0" right="0" top="0" bottom="2"/>
@@ -35,15 +35,15 @@
 </frame_geometry>
 
 <frame_geometry name="normal_unfocused" title_scale="medium" rounded_top_left="4" rounded_top_right="4" parent="normal">
-	<distance name="left_titlebar_edge" value="6"/>
-	<distance name="right_titlebar_edge" value="6"/>
+	<distance name="left_titlebar_edge" value="5"/>
+	<distance name="right_titlebar_edge" value="5"/>
 </frame_geometry>
 
 <frame_geometry name="max" title_scale="medium" parent="normal" rounded_top_left="false" rounded_top_right="false">
 	<distance name="left_width" value="0" />
 	<distance name="right_width" value="0" />
-	<distance name="left_titlebar_edge" value="6"/>
-	<distance name="right_titlebar_edge" value="6"/>
+	<distance name="left_titlebar_edge" value="5"/>
+	<distance name="right_titlebar_edge" value="5"/>
 	<distance name="title_vertical_pad" value="10"/> <!-- 
 							This needs to be 1 less then the
 							title_vertical_pad on normal state
@@ -68,8 +68,8 @@
 </frame_geometry>
 
 <frame_geometry name="small_unfocused" parent="small">
-	<distance name="left_titlebar_edge" value="6"/>
-	<distance name="right_titlebar_edge" value="6"/>
+	<distance name="left_titlebar_edge" value="5"/>
+	<distance name="right_titlebar_edge" value="5"/>
 </frame_geometry>
 
 <frame_geometry name="nobuttons" hide_buttons="true" parent="normal">
@@ -97,13 +97,29 @@
 	<!-- title -->
 
 <draw_ops name="title_focused">
-	<title color="#2C2C2C" x="3 `max` (width-title_width)/2" y="1 `max` ((height-title_height)/2)+1"/>
-	<title color="#f7f7f7" x="3 `max` (width-title_width)/2" y="0 `max` ((height-title_height)/2)"/>
+	<title version=">= 3.1"
+               x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width))) + 2"
+               y="(0 `max` ((height - title_height) / 2)) + 2"
+               ellipsize_width="width"
+               color="C_title_focused_hilight" />
+	<title version=">= 3.1"
+               x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width))) + 2"
+               y="(0 `max` ((height - title_height) / 2)) + 1"
+               ellipsize_width="width"
+               color="C_title_focused" />
 </draw_ops>
 
 <draw_ops name="title_unfocused">
-	<title color="#2C2C2C" x="4 `max` (width-title_width)/2+1" y="1 `max` ((height-title_height)/2)+1"/>
-	<title color="#bbbbbb" x="3 `max` (width-title_width)/2" y="0 `max` ((height-title_height)/2)"/>
+	<title version=">= 3.1"
+               x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width))) + 2"
+               y="(0 `max` ((height - title_height) / 2)) + 2"
+               ellipsize_width="width"
+               color="C_title_focused_hilight" />
+	<title version=">= 3.1"
+               x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width))) + 2"
+               y="(0 `max` ((height - title_height) / 2)) + 1"
+               ellipsize_width="width"
+               color="C_title_unfocused" />
 </draw_ops>
 
 	<!-- window decorations -->
@@ -180,22 +196,6 @@
 <draw_ops name="border_attached_focused">
 	<rectangle color="C_border_focused" x="0" y="0" width="width-1" height="height-1" filled="false" />
 	<line x1="0" y1="0" x2="width" y2="0" color="C_border_attached_focused" />
-	<gradient type="vertical" x="0" y="0" width="1" height="top_height">
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.3" />
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.1" />		
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.1" />
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.2" />
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.2" />
-		<color value="C_border_focused" />
-	</gradient>
-	<gradient type="vertical" x="width-1" y="0" width="1" height="top_height">
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.3" />
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.1" />
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.1" />
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.2" />
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.2" />
-		<color value="C_border_focused" />
-	</gradient>
 </draw_ops>
 
 

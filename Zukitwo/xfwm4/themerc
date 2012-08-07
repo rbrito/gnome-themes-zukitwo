@@ -7,7 +7,7 @@ title_vertical_offset_inactive=0
 #title_shadow_active=true
 title_shadow_inactive=true
 
-button_layout=O|HMC
+#button_layout=O|HMC
 
 active_text_color=#2c2c2c
 inactive_text_color=#999999
@@ -23,4 +23,4 @@ resize_opacity=100
 move_opacity=100
 popup_opacity=100
 show_frame_shadow=true
-show_popup_shadow=true
+show_popup_shadow=false
