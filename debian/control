@@ -20,6 +20,9 @@ Depends:
  ${shlibs:Depends}
 Recommends:
  gnome-tweak-tool
+Suggests:
+ faenza-icon-theme,
+ faenza-icons-mono
 Description: theme for GTK2, GTK3, GNOME Shell, Metacity, Unity and XFWM4
  Zukitwo is an attractive theme for GTK2, GTK3, GNOME Shell, Metacity, Unity
  and XFWM4.
