@@ -1,3 +1,12 @@
+gnome-themes-zukitwo (2012.08.17-1~2.gbp534aeb) UNRELEASED; urgency=low
+
+  ** SNAPSHOT build @534aebe446d5f6dbdbfc030e8597542114154825 **
+
+  * Imported Upstream version 2012.08.17
+  * debian/docs: Don't install file with installation instructions.
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Mon, 20 Aug 2012 18:40:08 -0300
+
 gnome-themes-zukitwo (2012.07.08-1) unstable; urgency=low
 
   * Imported Upstream version 2012.07.08
