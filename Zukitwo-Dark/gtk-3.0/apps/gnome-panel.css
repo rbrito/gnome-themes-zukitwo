@@ -1,7 +1,8 @@
 /* Fallback Mode Panel */
 PanelWidget,
 PanelApplet,
-PanelToplevel {
+PanelToplevel,
+.desktop-panel {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@dark_bg_color, 1.5)),
 		to (shade (@dark_bg_color, 1.05)));
@@ -31,7 +32,9 @@ PanelSeparator {
 PanelApplet > GtkMenuBar.menubar,
 PanelApplet > GtkMenuBar.menubar.menuitem,
 PanelMenuBar.menubar,
-PanelMenuBar.menubar.menuitem {
+PanelMenuBar.menubar.menuitem,
+.desktop-panel .menubar,
+.desktop-panel .menubar .menuitem {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@dark_bg_color, 1.5)),
 		to (shade (@dark_bg_color, 1.05)));
@@ -51,7 +54,8 @@ PanelAppletFrame {
 	text-shadow: none;
 }
 
-PanelApplet .button {
+PanelApplet .button,
+.desktop-panel .button {
 	-GtkButton-inner-border: 2;
 
 	background-image: -gtk-gradient (linear, left top, left bottom,
@@ -72,7 +76,9 @@ PanelApplet .button {
 }
 
 PanelApplet .button:prelight:active,
-PanelApplet .button:active {
+PanelApplet .button:active,
+.desktop-panel .button:prelight:active,
+.desktop-panel .button:active {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@dark_bg_color, 0.85)),
 		to (shade (@dark_bg_color, 1.0))); 
@@ -87,7 +93,8 @@ PanelApplet .button:active {
 	text-shadow: none;
 }
 
-PanelApplet .button:prelight {
+PanelApplet .button:prelight,
+.desktop-panel .button:prelight {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@dark_bg_color, 1.7)),
 		to (shade (@dark_bg_color, 1.25)));
