@@ -1,9 +1,13 @@
-gnome-themes-zukitwo (2012.08.17-1~2.gbp534aeb) UNRELEASED; urgency=low
+gnome-themes-zukitwo (2012.08.17-1~3.gbpbd8924) UNRELEASED; urgency=low
 
-  ** SNAPSHOT build @534aebe446d5f6dbdbfc030e8597542114154825 **
+  ** SNAPSHOT build @bd8924a561019945aa50c692cd2bbd8e59878dd9 **
 
   * Imported Upstream version 2012.08.17
   * debian/docs: Don't install file with installation instructions.
+  * The package complies with policy 3.9.3.
+  * Update dependency on GTK3 Unico engine.
+  * Update the homepage to one that's more frequently updated.
+  * Add dependency on GTK+ >= 3.4.
 
  -- Rogério Brito <rbrito@ime.usp.br>  Mon, 20 Aug 2012 18:40:08 -0300
 
