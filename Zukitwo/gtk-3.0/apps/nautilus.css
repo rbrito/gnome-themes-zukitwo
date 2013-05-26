@@ -38,6 +38,14 @@ NautilusWindow .view.rubberband {
 	border-radius: 2px;
 }
 
+.nautilus-canvas-item:selected { /* Makes sure that the color stays when opening the right click menu */
+	background-color: @selected_bg_color;
+}
+
+.nautilus-canvas-item:selected:backdrop {
+	background-color: @backdrop_selected_bg_color;
+}
+
 /* desktop mode */
 .nautilus-desktop.nautilus-canvas-item {
 	color: @bg_color;
