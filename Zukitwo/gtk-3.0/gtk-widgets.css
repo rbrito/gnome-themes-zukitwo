@@ -1,5 +1,7 @@
 /* default */
 * {
+	engine: adwaita;
+
 	-GtkArrow-arrow-scaling: 0.5;
 	-GtkButton-child-displacement-x: 1;
 	-GtkButton-child-displacement-y: 1;
@@ -45,7 +47,7 @@
 	-GtkWidget-separator-width: 2px;
 	-GtkWidget-separator-height: 2;
 	-GtkWidget-focus-padding: 0;
-	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-focus-line-width: 0; /* FIXME: disabled because of odd behavior in Ubuntu */
 	-GtkWidget-link-color: @link_color;
 	-GtkWidget-visited-link-color: @link_color;
 	-GtkWindow-resize-grip-default: false;
@@ -56,8 +58,10 @@
 	border-width: 1px;
 	padding: 0;
 
-	engine: adwaita;
-
+	/* We use the outline properties to signal the focus properties
+	* to the adwaita engine: using real CSS properties is faster,
+	* and we don't use any outlines for now.
+	*/
 	outline-color: alpha(@text_color, 0.3);
 	outline-style: dashed;
 	outline-offset: 2px;
@@ -533,6 +537,7 @@ GtkCheckButton:selected:focus {
 /*****************
  * column-header *
  *****************/
+.notebook column-header .button,
 column-header .button,
 column-header .button:hover,
 column-header .button:active,
@@ -555,12 +560,14 @@ column-header .button:active:hover:focused {
 		to (alpha (shade (@base_color, 1.02), 1.0))) 1;
 }
 
+.notebook column-header .button:hover,
 column-header .button:hover {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@base_color,0.98)),
 		to (shade (@base_color,1.0)));
 }
 
+.notebook column-header .button:focused,
 column-header .button:focused,
 column-header .button:hover:focused,
 column-header .button:active:focused,
@@ -785,7 +792,39 @@ GtkDrawingArea {
  * expander *
  ************/
 .expander {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
+	border-color: shade (@fg_color, 1.40);
 	color: @fg_color;
+	background-color: @base_color;
+	box-shadow: none;
+}
+
+.expander:active {
+	border-style: solid;
+	border-width: 1px;
+	color: @fg_color;
+	border-color: shade (@fg_color, 1.90);
+	background-color: @base_color;
+}
+
+.expander:hover {
+	border-style: solid;
+	border-width: 1px;
+	color: @fg_color;
+	border-color: shade (@fg_color, 1.40);
+	background-color: shade (@bg_color, 1.02);
+}
+
+.expander row:selected,
+.expander row:selected:focus {
+	border-style: solid;
+	border-width: 1px;
+	border-color: @selected_fg_color;
+	color: @selected_fg_color;
+	background-color: @selected_bg_color;
+	box-shadow: none;
 }
 
 /*********
@@ -827,6 +866,7 @@ GtkIconView.view.cell:selected:focused {
 	color: @selected_fg_color;
 }
 
+.view.rubberband,
 .rubberband {
 	background-color: alpha (@selected_bg_color, 0.35);
 	border-color: @selected_bg_color;
@@ -1593,6 +1633,10 @@ DbusmenuGtkMenu .menuitem.separator,
 .sidebar .view {
 }
 
+.sidebar row {
+	box-shadow: none;
+}
+
 .sidebar row:selected {
 	text-shadow: 0 1px shade (@selected_bg_color, 0.7);
 }
@@ -1910,7 +1954,7 @@ GtkTextView {
  ************/
 GtkTreeView {
 	-GtkTreeView-vertical-separator: 0;
-	-GtkTreeView-expander-size: 10;
+	-GtkTreeView-expander-size: 17;
 }
 
 GtkTreeView.dnd {
@@ -1927,12 +1971,19 @@ GtkTreeView .entry {
 
 GtkTreeView row:nth-child(even),
 GtkTreeView row:nth-child(even):hover {
-	background-color: shade (@base_color, 0.97);
+	background-color: shade (@base_color, 1.0);
+	box-shadow: inset 0 -1px 0 0 shade (@base_color, 0.96);
 }
 
 GtkTreeView row:nth-child(odd),
 GtkTreeView row:nth-child(odd):hover {
 	background-color: shade (@base_color, 1.0);
+	box-shadow: inset 0 -1px 0 0 shade (@base_color, 0.96);
+}
+
+GtkTreeView row:nth-child(even):selected,
+GtkTreeView row:nth-child(odd):selected {
+	box-shadow: none;
 }
 
 /************
@@ -2049,6 +2100,14 @@ GtkIconView {
 }
 
 .spinner:active {
+background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.875)), to(transparent)),
+	-gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.750)), to(transparent)),
+	-gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.625)), to(transparent)),
+	-gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.500)), to(transparent)),
+	-gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.375)), to(transparent)),
+	-gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.250)), to(transparent)),
+	-gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.125)), to(transparent)),
+	-gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent));
 	animation: spinner 1s infinite linear;
 }
 
