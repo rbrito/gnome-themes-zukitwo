@@ -16,6 +16,5 @@ TerminalWindow GtkNotebook.notebook tab {
 	border-bottom-width: 1px;
 	border-right-width: 1px;
 	border-left-width: 1px;
-	border-radius: 2px 2px 0 0;
 }
 

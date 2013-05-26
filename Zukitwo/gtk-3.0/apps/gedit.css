@@ -15,12 +15,16 @@ GeditPanel .toolbar {
 GeditDocumentsPanel .view {
 }
 
-GeditDocumentsPanel .view:backdrop {
+GeditWindow .notebook {
+	padding: 0px;
+	border-radius: 1px;
+	border-width: 1px 0 1px 0;
 }
 
-GeditWindow .notebook {
-	padding: 1px;
-	border-radius: 1px;
+GeditWindow .notebook tab.top,
+GeditWindow .notebook tab.bottom {
+	border-right-width: 1px;
+	border-left-width: 1px;
 }
 
 GeditPanel .notebook {
