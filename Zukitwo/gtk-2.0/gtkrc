@@ -10,7 +10,7 @@
 # NOTE: Uncommenting means to delete the "#" at the beginning of a line. Commenting means to add a "#" at the beginning of a line. The "#" tells the theme wether to ignore the specified line or not.
 
 # These are the defined colors for the theme, you can change them in GNOME's appearance preferences.
-gtk_color_scheme = "bg_color:#dcdcdc\nselected_bg_color:#a2b8ca\nbase_color:#F7F7F7" # Background, base.
+gtk_color_scheme = "bg_color:#d2d2d2\nselected_bg_color:#799ABE\nbase_color:#F7F7F7" # Background, base.
 gtk_color_scheme = "fg_color:#2c2c2c\nselected_fg_color:#f5f5f5\ntext_color:#2c2c2c" # Foreground, text.
 gtk_color_scheme = "tooltip_bg_color:#F5F5B5\ntooltip_fg_color:#000000" # Tooltips.
 gtk_color_scheme = "link_color:#08c" # Hyperlinks
@@ -52,8 +52,8 @@ style "murrine-default" {
 	GtkScrollbar	::has-backward-stepper		= 0  
 	GtkScrollbar	::has-forward-stepper		= 0
 	GtkScrollbar	::min-slider-length		= 15
-	GtkScrollbar	::slider-width			= 11
-	GtkScrollbar	::trough-border			= 1
+	GtkScrollbar	::slider-width			= 13
+	GtkScrollbar	::trough-border			= 0
 	GtkScrollbar	::activate-slider		= 1
 
 	GtkScrolledWindow ::scrollbar-spacing		= 0
@@ -307,7 +307,7 @@ style "murrine_separator_menu_item" {
 	GtkWidget::separator-height = 7
 	
 	engine "murrine" {
-		contrast = 0.0 # Set the contrast to 0.6 for visible separators.
+		contrast = 0.6 # Set the contrast to 0.6 for visible separators.
 		separatorstyle = 0
 	}
 }
@@ -330,9 +330,9 @@ style "murrine-treeview-header" = "murrine-button" {
 	engine "murrine" {
 		roundness		= 0  # This makes treeview progressbars square.
 		contrast		= .8
-		lightborder_shade	= 1.9
+		lightborder_shade	= 1.0
 		border_shades		= { 1.1, 1.1 }
-		gradient_shades		= {1.1,1.1,1.00,1.00}
+		gradient_shades		= {1.0,1.0,1.1,1.1}
 	}
 }
 
