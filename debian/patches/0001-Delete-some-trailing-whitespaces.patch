@@ -1,0 +1,905 @@
+From: =?UTF-8?q?Rog=C3=A9rio=20Brito?= <rbrito@ime.usp.br>
+Date: Sun, 14 Jul 2013 03:16:21 -0300
+Subject: Delete some trailing whitespaces.
+
+---
+ Zukitwo-Dark/gtk-2.0/apps/gedit.rc           |  4 ++--
+ Zukitwo-Dark/gtk-2.0/apps/nautilus-e.rc      | 22 ++++++++++----------
+ Zukitwo-Dark/gtk-2.0/apps/nautilus.rc        |  8 ++++----
+ Zukitwo-Dark/gtk-2.0/widgets/panel.rc        | 10 +++++-----
+ Zukitwo-Dark/gtk-3.0/apps/gnome-panel.css    |  6 +++---
+ Zukitwo-Dark/gtk-3.0/apps/nautilus.css       |  6 +++---
+ Zukitwo-Dark/gtk-3.0/apps/popover.css        |  6 +++---
+ Zukitwo-Dark/gtk-3.0/gtk-widgets.css         |  2 +-
+ Zukitwo-Dark/metacity-1/metacity-theme-1.xml | 30 ++++++++++++++--------------
+ Zukitwo-Dark/metacity-1/metacity-theme-3.xml | 18 ++++++++---------
+ Zukitwo/gtk-2.0/apps/gedit.rc                |  4 ++--
+ Zukitwo/gtk-2.0/apps/nautilus-e.rc           | 22 ++++++++++----------
+ Zukitwo/gtk-2.0/apps/nautilus.rc             |  8 ++++----
+ Zukitwo/gtk-2.0/widgets/panel.rc             | 10 +++++-----
+ Zukitwo/gtk-3.0/apps/gnome-panel.css         |  6 +++---
+ Zukitwo/gtk-3.0/apps/nautilus.css            |  6 +++---
+ Zukitwo/gtk-3.0/apps/popover.css             |  6 +++---
+ Zukitwo/gtk-3.0/gtk-widgets.css              |  2 +-
+ Zukitwo/metacity-1/metacity-theme-1.xml      | 30 ++++++++++++++--------------
+ Zukitwo/metacity-1/metacity-theme-3.xml      | 18 ++++++++---------
+ 20 files changed, 112 insertions(+), 112 deletions(-)
+
+diff --git a/Zukitwo-Dark/gtk-2.0/apps/gedit.rc b/Zukitwo-Dark/gtk-2.0/apps/gedit.rc
+index 0a8dcd7..08a1c1d 100644
+--- a/Zukitwo-Dark/gtk-2.0/apps/gedit.rc
++++ b/Zukitwo-Dark/gtk-2.0/apps/gedit.rc
+@@ -1,6 +1,6 @@
+ ### Styles gedit. Removes the ugly frame etc. ###
+ 
+-style "gedit-frame" {	
++style "gedit-frame" {
+ 	engine "pixmap" {
+  		image {
+ 			function = SHADOW
+@@ -8,7 +8,7 @@ style "gedit-frame" {
+ 	}
+ }
+ 
+-style "gedit-statusbar" {	
++style "gedit-statusbar" {
+ 	ythickness = 0
+ }
+ 
+diff --git a/Zukitwo-Dark/gtk-2.0/apps/nautilus-e.rc b/Zukitwo-Dark/gtk-2.0/apps/nautilus-e.rc
+index c953cbc..17fbbea 100644
+--- a/Zukitwo-Dark/gtk-2.0/apps/nautilus-e.rc
++++ b/Zukitwo-Dark/gtk-2.0/apps/nautilus-e.rc
+@@ -50,7 +50,7 @@ style "nautilus-scale" {
+ 			detail		= "trough"
+ 			file		= "Nautilus/trough.png"
+ 			border		= { 10, 10, 5, 15 }
+-			}	
++			}
+ 		image {
+ 			function	= SLIDER
+ 			overlay_file	= "Nautilus/slider.png"
+@@ -69,7 +69,7 @@ style "nautilus-breadcrumbs" {
+ 	ythickness = 0
+ 	GtkButton::child-displacement-y	= 0
+ 	GtkButton::inner-border		= { 0, 11, 0, 0}
+-	engine "pixmap" {	
++	engine "pixmap" {
+ 		image {
+ 			function	= BOX
+ 			recolorable	= TRUE
+@@ -126,7 +126,7 @@ style "nautilus-left-slider" {
+ 		}
+ }
+ 
+-style "nautilus-right-slider" {	
++style "nautilus-right-slider" {
+ 	xthickness = 0
+ 	ythickness = 0
+ 	engine "pixmap" {
+@@ -138,7 +138,7 @@ style "nautilus-right-slider" {
+ 			}
+ 		}
+ }
+-style "nautilus-toolbar" 
++style "nautilus-toolbar"
+ {
+ 	xthickness = 1
+ 	ythickness = 1
+@@ -192,7 +192,7 @@ style "toolbuttons" = "murrine-default" {
+ 			file		= "dummy.png"
+ 			border		= { 5, 5, 5, 5 }
+ 			stretch		= TRUE
+-			}  
++			}
+ 		image {
+ 			function	= BOX
+ 			recolorable	= TRUE
+@@ -200,16 +200,16 @@ style "toolbuttons" = "murrine-default" {
+ 			file		= "dummy.png"
+ 			border		= { 5, 5, 5, 5 }
+ 			stretch		= TRUE
+-			}  
++			}
+ 		}
+ }
+ 
+ style "pixmap-mode-button" {
+-	engine "pixmap" {	
++	engine "pixmap" {
+ 		image { function = BOX state = PRELIGHT		file = "Nautilus/mode_prelight.png" border = { 3, 13, 3, 3 } stretch = TRUE }
+ 		image { function = BOX state = NORMAL		file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE }
+-	    	image { function = BOX state = ACTIVE		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }  
+-		image { function = BOX state = INSENSITIVE	file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE } 
++	    	image { function = BOX state = ACTIVE		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }
++		image { function = BOX state = INSENSITIVE	file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE }
+ 	    	image { function = BOX state = SELECTED		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }
+ 		}
+ }
+@@ -229,7 +229,7 @@ widget_class	"*Nautilus*Notebook"			style "murrine-thin"
+ 
+ widget 		"*ModeButton*"                          style "pixmap-mode-button"
+ widget "*.nautilus-extra-view-widget" 			style : highest "nautilus-extra-view"
+-widget_class 	"*NautilusPathBar.*ToggleButton*"	style "nautilus-breadcrumbs" 
++widget_class 	"*NautilusPathBar.*ToggleButton*"	style "nautilus-breadcrumbs"
+ 
+-widget 		"Nautilus*left_slider*"			style "nautilus-left-slider" 
++widget 		"Nautilus*left_slider*"			style "nautilus-left-slider"
+ widget 		"Nautilus*right_slider*"		style "nautilus-right-slider"
+diff --git a/Zukitwo-Dark/gtk-2.0/apps/nautilus.rc b/Zukitwo-Dark/gtk-2.0/apps/nautilus.rc
+index 339e24b..70e2677 100644
+--- a/Zukitwo-Dark/gtk-2.0/apps/nautilus.rc
++++ b/Zukitwo-Dark/gtk-2.0/apps/nautilus.rc
+@@ -14,7 +14,7 @@ style "nautilus-view" {
+ 
+ style "nautilus-handle" {
+ 	GtkPaned::handle-size = 1
+-	
++
+ 	engine "pixmap" {
+ 		# for the thin gray line separating the sidepane and viewpane
+ 		image {
+@@ -58,7 +58,7 @@ style "nautilus-location"
+ }
+ 
+ style "nautilus-pathbar"
+-{	
++{
+ 	#bg[NORMAL] = @bg_color
+ }
+ 
+@@ -75,7 +75,7 @@ widget_class "*Nautilus*Side*Title*"               style "nautilus-sidebar"
+ #widget "*NautilusNavigationWindow"                 style "nautilus-window-base"
+ 
+ widget_class "*Nautilus*Scrollbar"                 style "murrine-scrollbar"
+-widget_class "*NautilusSidePane.*Scrollbar"        style:highest "murrine-scrollbar"	
++widget_class "*NautilusSidePane.*Scrollbar"        style:highest "murrine-scrollbar"
+ widget_class "*Nautilus*Statusbar*"                style "nautilus-statusbar"
+ 
+ widget "*Nautilus*Splitter"                        style "nautilus-handle"
+@@ -87,5 +87,5 @@ widget_class "*Nautilus*<GtkCTree>.<GtkButton>"    style "murrine-treeview-heade
+ widget_class "*Nautilus*<GtkList>.<GtkButton>"     style "murrine-treeview-header"
+ widget_class "*Nautilus*<GtkCList>.<GtkButton>"    style "murrine-treeview-header"
+ 
+-widget_class "*NautilusPathBar*"                   style "nautilus-pathbar" 
++widget_class "*NautilusPathBar*"                   style "nautilus-pathbar"
+ widget "*.nautilus-extra-view-widget"              style "nautilus-location"
+diff --git a/Zukitwo-Dark/gtk-2.0/widgets/panel.rc b/Zukitwo-Dark/gtk-2.0/widgets/panel.rc
+index 8f5f118..1b65a21 100644
+--- a/Zukitwo-Dark/gtk-2.0/widgets/panel.rc
++++ b/Zukitwo-Dark/gtk-2.0/widgets/panel.rc
+@@ -11,7 +11,7 @@ style "theme-panel"
+ 	text[NORMAL]	= "#f5f5f5"
+ 	text[PRELIGHT]	= "#ffffff"
+ 	text[ACTIVE]	= "#f5f5f5"
+-	
++
+ 	engine "pixmap" {
+ 		image {
+ 			function	= BOX
+@@ -84,12 +84,12 @@ style "theme-main-menu-text" = "theme-panel-text"
+ 	text[PRELIGHT]	= "#ffffff"
+ }
+ 
+-style "theme-panel-handle" 
++style "theme-panel-handle"
+ {
+-	engine "pixmap" {    
++	engine "pixmap" {
+ 		image {
+ 			function = HANDLE
+-		}    
++		}
+ 		image {
+ 			function = HANDLE
+ 		}
+@@ -106,7 +106,7 @@ class "PanelToplevel*"			style "theme-panel"
+ widget_class "*PanelToplevel*"		style "theme-panel"
+ widget_class "*notif*"			style "theme-panel"
+ widget_class "*Notif*"			style "theme-panel"
+-widget_class "*Tray*"			style "theme-panel" 
++widget_class "*Tray*"			style "theme-panel"
+ widget_class "*tray*"			style "theme-panel"
+ widget_class "*computertemp*"		style "theme-panel"
+ widget_class "*Applet*Tomboy*"		style "theme-panel"
+diff --git a/Zukitwo-Dark/gtk-3.0/apps/gnome-panel.css b/Zukitwo-Dark/gtk-3.0/apps/gnome-panel.css
+index 5a548d3..ed7c4b6 100644
+--- a/Zukitwo-Dark/gtk-3.0/apps/gnome-panel.css
++++ b/Zukitwo-Dark/gtk-3.0/apps/gnome-panel.css
+@@ -43,7 +43,7 @@ PanelMenuBar.menubar.menuitem,
+ 	text-shadow: none;
+ }
+ 
+-PanelAppletFrame { 
++PanelAppletFrame {
+ 	background-color: @dark_bg_color;
+ 	background-image: -gtk-gradient (linear, left top, left bottom,
+ 		from (shade (@dark_bg_color, 1.5)),
+@@ -81,7 +81,7 @@ PanelApplet .button:active,
+ .desktop-panel .button:active {
+ 	background-image: -gtk-gradient (linear, left top, left bottom,
+ 		from (shade (@dark_bg_color, 0.85)),
+-		to (shade (@dark_bg_color, 1.0))); 
++		to (shade (@dark_bg_color, 1.0)));
+ 	border-color: shade (@dark_bg_color, 0.78);
+ 	border-radius: 0;
+ 	border-width: 0 1px 0 1px;
+@@ -137,7 +137,7 @@ WnckPager, WnckTasklist {
+ 	color: @dark_fg_color;
+ 	text-shadow: none;
+ 	-unico-inner-stroke-width: 0;
+-	-unico-outer-stroke-width: 0;	
++	-unico-outer-stroke-width: 0;
+ }
+ 
+ .gnome-panel-menu-bar .menu.menuitem:hover,
+diff --git a/Zukitwo-Dark/gtk-3.0/apps/nautilus.css b/Zukitwo-Dark/gtk-3.0/apps/nautilus.css
+index f709a75..bdf8fb3 100644
+--- a/Zukitwo-Dark/gtk-3.0/apps/nautilus.css
++++ b/Zukitwo-Dark/gtk-3.0/apps/nautilus.css
+@@ -125,17 +125,17 @@ NautilusWindow .sidebar .view {
+ 	background-color: @bg_color;
+ 
+ 	color: @fg_color;
+-	text-shadow: 0 1 shade (shade (@bg_color, 0.95), 1.04);  
++	text-shadow: 0 1 shade (shade (@bg_color, 0.95), 1.04);
+ }
+ 
+ NautilusWindow .sidebar row:selected {
+ 	color: @selected_fg_color;
+-	text-shadow: 0 -1 shade (@selected_bg_color, 0.8); 
++	text-shadow: 0 -1 shade (@selected_bg_color, 0.8);
+ }
+ 
+ NautilusWindow .sidebar row:backdrop:selected {
+ 	color: @backdrop_selected_fg_color;
+-	text-shadow: none; 
++	text-shadow: none;
+ }
+ 
+ NautilusWindow .sidebar .frame {
+diff --git a/Zukitwo-Dark/gtk-3.0/apps/popover.css b/Zukitwo-Dark/gtk-3.0/apps/popover.css
+index 0aef921..8046c18 100644
+--- a/Zukitwo-Dark/gtk-3.0/apps/popover.css
++++ b/Zukitwo-Dark/gtk-3.0/apps/popover.css
+@@ -4,7 +4,7 @@ GraniteWidgetsPopOver {
+ 	-GraniteWidgetsPopOver-border-radius: 6;
+ 	-GraniteWidgetsPopOver-border-width: 1;
+ 	-GraniteWidgetsPopOver-shadow-size: 18;
+-	
++
+ 	border-style: solid;
+ 	border-color: shade (@bg_color, 0.50);
+ 	background-color: @bg_color;
+@@ -21,8 +21,8 @@ GraniteWidgetsPopOver .sidebar.view {
+ 
+ GraniteWidgetsPopOver .button {
+ 	background-image: none;
+-	
+-	background-color: alpha (#fff, 0.0);	
++
++	background-color: alpha (#fff, 0.0);
+ 
+ 	-unico-outer-stroke-gradient: -gtk-gradient (linear,
+ 		left top, left bottom,
+diff --git a/Zukitwo-Dark/gtk-3.0/gtk-widgets.css b/Zukitwo-Dark/gtk-3.0/gtk-widgets.css
+index fb22ff9..deb603e 100644
+--- a/Zukitwo-Dark/gtk-3.0/gtk-widgets.css
++++ b/Zukitwo-Dark/gtk-3.0/gtk-widgets.css
+@@ -15,7 +15,7 @@
+ 	-GtkHTML-link-color: @link_color;
+ 	-GtkIMHtml-hyperlink-color: @link_color;
+ 	-GtkMenu-horizontal-padding: 0;
+-	-GtkMenu-vertical-padding: 0;  
++	-GtkMenu-vertical-padding: 0;
+ 	-GtkMenuBar-internal-padding: 0;
+ 	-GtkMenuItem-arrow-scaling: 0.7;
+ 	-GtkNotebook-tab-overlap: 1;
+diff --git a/Zukitwo-Dark/metacity-1/metacity-theme-1.xml b/Zukitwo-Dark/metacity-1/metacity-theme-1.xml
+index 837fe2b..bd17356 100644
+--- a/Zukitwo-Dark/metacity-1/metacity-theme-1.xml
++++ b/Zukitwo-Dark/metacity-1/metacity-theme-1.xml
+@@ -81,20 +81,20 @@
+ 		<color value="#565656" />
+ 		<color value="#4C4C4C" />
+ 	</gradient>
+-	
++
+ 	<!-- Titlebar outline -->
+ 	<rectangle color="shade/#3c3c3c/1.2" filled="false" x="0" y="0" width="width - 1" height="top_height - 0"/>
+ 
+ 	<!-- Topmost lines -->
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="width" y1="0" y2="0"/>
+ 	<line color="shade/#6C6C6C/1.1" x1="0" x2="width" y1="1" y2="1"/>
+-	
++
+ 	<!-- Darkening of the left arch -->
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="4" y1="1" y2="1"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="2" y1="2" y2="2"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="3" y2="3"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="4" y2="4"/>
+-	
++
+ 	<line color="shade/#3c3c3c/1.2" x1="width-5" x2="width" y1="1" y2="1"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-3" x2="width" y1="2" y2="2"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="3" y2="3"/>
+@@ -117,18 +117,18 @@
+ 	<!-- Topmost lines -->
+ 	<line color="shade/#3c3c3c/1.16" x1="0" x2="width" y1="0" y2="0"/>
+ 	<line color="shade/#6C6C6C/1.14" x1="0" x2="width" y1="1" y2="1"/>
+-	
++
+ 	<!-- Darkening of the left arch -->
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="4" y1="1" y2="1"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="2" y1="2" y2="2"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="3" y2="3"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="4" y2="4"/>
+-	
++
+ 	<line color="shade/#3c3c3c/1.2" x1="width-5" x2="width" y1="1" y2="1"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-3" x2="width" y1="2" y2="2"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="3" y2="3"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="4" y2="4"/>
+-  
++
+ 	<line color="shade/#3c3c3c/0.9" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
+ </draw_ops>
+ 
+@@ -143,10 +143,10 @@
+ 		<color value="#565656" />
+ 		<color value="#4C4C4C" />
+ 	</gradient>
+-	
++
+ 	<!-- Topmost dark line -->
+ 	<line color="shade/#6C6C6C/1.1" x1="0" x2="width" y1="0" y2="0"/>
+-	
++
+ 	<line color="shade/#3c3c3c/0.94" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
+ </draw_ops>
+ 
+@@ -157,10 +157,10 @@
+ 		<color value="#565656" />
+ 		<color value="#4C4C4C" />
+ 	</gradient>
+-	
++
+ 	<!-- Topmost dark line -->
+ 	<line color="shade/#6C6C6C/1.1" x1="0" x2="width" y1="0" y2="0"/>
+-	
++
+ 	<line color="shade/#6C6C6C/0.94" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
+ </draw_ops>
+ 
+@@ -188,7 +188,7 @@
+ 	<line color="shade/gtk:bg[NORMAL]/0.88" x1="width - 2" y1="1" x2="width - 2" y2="height - 2"/>
+ 	<line color="shade/gtk:bg[NORMAL]/1.4" x1="1" y1="1" x2="width - 2" y2="1"/>
+ 	<line color="shade/gtk:bg[NORMAL]/1.4" x1="1" y1="1" x2="1" y2="height - 2"/>
+-	
++
+ 	<rectangle color="shade/gtk:bg[NORMAL]/0.25" filled="false"
+ 			   x="0" y="0"
+ 			   width="width - 1"
+@@ -234,7 +234,7 @@
+ 	<draw_ops name="left_right_background_unfocused_pressed">
+ 		<image filename="trough_right.png" x="0" y="1" width="object_width" height="object_height"/>
+ 	</draw_ops>
+-	
++
+ <!-- Button Trough Right -->
+ 	<draw_ops name="right_left_background_focused_normal">
+ 		<image filename="trough_left.png" x="0" y="1" width="object_width" height="object_height"/>
+@@ -272,7 +272,7 @@
+ 	<draw_ops name="right_right_background_unfocused_pressed">
+ 		<image filename="trough_right.png" x="0" y="1" width="object_width" height="object_height"/>
+ 	</draw_ops>
+-	
++
+ <!-- Button prelightlays -->
+ 	<draw_ops name="menu_focused_normal">
+    	<image filename="menu.png" x="0" y="1" width="object_width" height="object_height"/>
+@@ -386,7 +386,7 @@
+ 	<button function="right_right_background" state="pressed" draw_ops="right_right_background_focused_pressed"/>
+ 	<button function="menu" state="normal" draw_ops="menu_focused_normal"/>
+ 	<button function="menu" state="prelight" draw_ops="menu_focused_prelight"/>
+-	<button function="menu" state="pressed" draw_ops="menu_focused_normal"/> 
++	<button function="menu" state="pressed" draw_ops="menu_focused_normal"/>
+ 	<button function="minimize" state="normal" draw_ops="minimize_focused_normal"/>
+ 	<button function="minimize" state="prelight" draw_ops="minimize_focused_prelight"/>
+ 	<button function="minimize" state="pressed" draw_ops="minimize_focused_pressed"/>
+@@ -521,4 +521,4 @@
+ <window type="utility" style_set="utility"/>
+ <window type="border" style_set="border"/>
+ 
+-</metacity_theme> 
++</metacity_theme>
+diff --git a/Zukitwo-Dark/metacity-1/metacity-theme-3.xml b/Zukitwo-Dark/metacity-1/metacity-theme-3.xml
+index 8e70e92..e42cb83 100644
+--- a/Zukitwo-Dark/metacity-1/metacity-theme-3.xml
++++ b/Zukitwo-Dark/metacity-1/metacity-theme-3.xml
+@@ -44,7 +44,7 @@
+ 	<distance name="right_width" value="0" />
+ 	<distance name="left_titlebar_edge" value="5"/>
+ 	<distance name="right_titlebar_edge" value="5"/>
+-	<distance name="title_vertical_pad" value="10"/> <!-- 
++	<distance name="title_vertical_pad" value="10"/> <!--
+ 							This needs to be 1 less then the
+ 							title_vertical_pad on normal state
+ 							or you'll have bigger buttons -->
+@@ -225,29 +225,29 @@
+ 
+ <draw_ops name="border_right_focused">
+ 	<line
+-		x1="width-1" y1="0" 
+-		x2="width-1" y2="height" 
++		x1="width-1" y1="0"
++		x2="width-1" y2="height"
+ 		color="C_border_focused" />
+ </draw_ops>
+ 
+ <draw_ops name="border_right_unfocused">
+ 	<line
+-		x1="width" y1="0" 
+-		x2="width" y2="height" 
++		x1="width" y1="0"
++		x2="width" y2="height"
+ 		color="C_border_unfocused" />
+ </draw_ops>
+ 
+ <draw_ops name="border_left_focused">
+ 	<line
+-		x1="0" y1="0" 
+-		x2="0" y2="height" 
++		x1="0" y1="0"
++		x2="0" y2="height"
+ 		color="C_border_focused" />
+ </draw_ops>
+ 
+ <draw_ops name="border_left_unfocused">
+ 	<line
+-		x1="0" y1="0" 
+-		x2="0" y2="height" 
++		x1="0" y1="0"
++		x2="0" y2="height"
+ 		color="C_border_unfocused" />
+ </draw_ops>
+ 
+diff --git a/Zukitwo/gtk-2.0/apps/gedit.rc b/Zukitwo/gtk-2.0/apps/gedit.rc
+index 0a8dcd7..08a1c1d 100644
+--- a/Zukitwo/gtk-2.0/apps/gedit.rc
++++ b/Zukitwo/gtk-2.0/apps/gedit.rc
+@@ -1,6 +1,6 @@
+ ### Styles gedit. Removes the ugly frame etc. ###
+ 
+-style "gedit-frame" {	
++style "gedit-frame" {
+ 	engine "pixmap" {
+  		image {
+ 			function = SHADOW
+@@ -8,7 +8,7 @@ style "gedit-frame" {
+ 	}
+ }
+ 
+-style "gedit-statusbar" {	
++style "gedit-statusbar" {
+ 	ythickness = 0
+ }
+ 
+diff --git a/Zukitwo/gtk-2.0/apps/nautilus-e.rc b/Zukitwo/gtk-2.0/apps/nautilus-e.rc
+index 7224325..4a13fe7 100644
+--- a/Zukitwo/gtk-2.0/apps/nautilus-e.rc
++++ b/Zukitwo/gtk-2.0/apps/nautilus-e.rc
+@@ -49,7 +49,7 @@ style "nautilus-scale" {
+ 			detail		= "trough"
+ 			file		= "Nautilus/trough.png"
+ 			border		= { 10, 10, 5, 15 }
+-			}	
++			}
+ 		image {
+ 			function	= SLIDER
+ 			overlay_file	= "Nautilus/slider.png"
+@@ -68,7 +68,7 @@ style "nautilus-breadcrumbs" {
+ 	ythickness = 0
+ 	GtkButton::child-displacement-y	= 0
+ 	GtkButton::inner-border		= { 0, 11, 0, 0}
+-	engine "pixmap" {	
++	engine "pixmap" {
+ 		image {
+ 			function	= BOX
+ 			recolorable	= TRUE
+@@ -125,7 +125,7 @@ style "nautilus-left-slider" {
+ 		}
+ }
+ 
+-style "nautilus-right-slider" {	
++style "nautilus-right-slider" {
+ 	xthickness = 0
+ 	ythickness = 0
+ 	engine "pixmap" {
+@@ -137,7 +137,7 @@ style "nautilus-right-slider" {
+ 			}
+ 		}
+ }
+-style "nautilus-toolbar" 
++style "nautilus-toolbar"
+ {
+ 	xthickness = 1
+ 	ythickness = 1
+@@ -191,7 +191,7 @@ style "toolbuttons" = "murrine-default" {
+ 			file		= "dummy.png"
+ 			border		= { 5, 5, 5, 5 }
+ 			stretch		= TRUE
+-			}  
++			}
+ 		image {
+ 			function	= BOX
+ 			recolorable	= TRUE
+@@ -199,16 +199,16 @@ style "toolbuttons" = "murrine-default" {
+ 			file		= "dummy.png"
+ 			border		= { 5, 5, 5, 5 }
+ 			stretch		= TRUE
+-			}  
++			}
+ 		}
+ }
+ 
+ style "pixmap-mode-button" {
+-	engine "pixmap" {	
++	engine "pixmap" {
+ 		image { function = BOX state = PRELIGHT		file = "Nautilus/mode_prelight.png" border = { 3, 13, 3, 3 } stretch = TRUE }
+ 		image { function = BOX state = NORMAL		file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE }
+-	    	image { function = BOX state = ACTIVE		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }  
+-		image { function = BOX state = INSENSITIVE	file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE } 
++	    	image { function = BOX state = ACTIVE		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }
++		image { function = BOX state = INSENSITIVE	file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE }
+ 	    	image { function = BOX state = SELECTED		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }
+ 		}
+ }
+@@ -228,7 +228,7 @@ widget_class	"*Nautilus*Notebook"			style "murrine-thin"
+ 
+ widget 		"*ModeButton*"                          style "pixmap-mode-button"
+ widget "*.nautilus-extra-view-widget" 			style : highest "nautilus-extra-view"
+-widget_class 	"*NautilusPathBar.*ToggleButton*"	style "nautilus-breadcrumbs" 
++widget_class 	"*NautilusPathBar.*ToggleButton*"	style "nautilus-breadcrumbs"
+ 
+-widget 		"Nautilus*left_slider*"			style "nautilus-left-slider" 
++widget 		"Nautilus*left_slider*"			style "nautilus-left-slider"
+ widget 		"Nautilus*right_slider*"		style "nautilus-right-slider"
+diff --git a/Zukitwo/gtk-2.0/apps/nautilus.rc b/Zukitwo/gtk-2.0/apps/nautilus.rc
+index 339e24b..70e2677 100644
+--- a/Zukitwo/gtk-2.0/apps/nautilus.rc
++++ b/Zukitwo/gtk-2.0/apps/nautilus.rc
+@@ -14,7 +14,7 @@ style "nautilus-view" {
+ 
+ style "nautilus-handle" {
+ 	GtkPaned::handle-size = 1
+-	
++
+ 	engine "pixmap" {
+ 		# for the thin gray line separating the sidepane and viewpane
+ 		image {
+@@ -58,7 +58,7 @@ style "nautilus-location"
+ }
+ 
+ style "nautilus-pathbar"
+-{	
++{
+ 	#bg[NORMAL] = @bg_color
+ }
+ 
+@@ -75,7 +75,7 @@ widget_class "*Nautilus*Side*Title*"               style "nautilus-sidebar"
+ #widget "*NautilusNavigationWindow"                 style "nautilus-window-base"
+ 
+ widget_class "*Nautilus*Scrollbar"                 style "murrine-scrollbar"
+-widget_class "*NautilusSidePane.*Scrollbar"        style:highest "murrine-scrollbar"	
++widget_class "*NautilusSidePane.*Scrollbar"        style:highest "murrine-scrollbar"
+ widget_class "*Nautilus*Statusbar*"                style "nautilus-statusbar"
+ 
+ widget "*Nautilus*Splitter"                        style "nautilus-handle"
+@@ -87,5 +87,5 @@ widget_class "*Nautilus*<GtkCTree>.<GtkButton>"    style "murrine-treeview-heade
+ widget_class "*Nautilus*<GtkList>.<GtkButton>"     style "murrine-treeview-header"
+ widget_class "*Nautilus*<GtkCList>.<GtkButton>"    style "murrine-treeview-header"
+ 
+-widget_class "*NautilusPathBar*"                   style "nautilus-pathbar" 
++widget_class "*NautilusPathBar*"                   style "nautilus-pathbar"
+ widget "*.nautilus-extra-view-widget"              style "nautilus-location"
+diff --git a/Zukitwo/gtk-2.0/widgets/panel.rc b/Zukitwo/gtk-2.0/widgets/panel.rc
+index 8f5f118..1b65a21 100644
+--- a/Zukitwo/gtk-2.0/widgets/panel.rc
++++ b/Zukitwo/gtk-2.0/widgets/panel.rc
+@@ -11,7 +11,7 @@ style "theme-panel"
+ 	text[NORMAL]	= "#f5f5f5"
+ 	text[PRELIGHT]	= "#ffffff"
+ 	text[ACTIVE]	= "#f5f5f5"
+-	
++
+ 	engine "pixmap" {
+ 		image {
+ 			function	= BOX
+@@ -84,12 +84,12 @@ style "theme-main-menu-text" = "theme-panel-text"
+ 	text[PRELIGHT]	= "#ffffff"
+ }
+ 
+-style "theme-panel-handle" 
++style "theme-panel-handle"
+ {
+-	engine "pixmap" {    
++	engine "pixmap" {
+ 		image {
+ 			function = HANDLE
+-		}    
++		}
+ 		image {
+ 			function = HANDLE
+ 		}
+@@ -106,7 +106,7 @@ class "PanelToplevel*"			style "theme-panel"
+ widget_class "*PanelToplevel*"		style "theme-panel"
+ widget_class "*notif*"			style "theme-panel"
+ widget_class "*Notif*"			style "theme-panel"
+-widget_class "*Tray*"			style "theme-panel" 
++widget_class "*Tray*"			style "theme-panel"
+ widget_class "*tray*"			style "theme-panel"
+ widget_class "*computertemp*"		style "theme-panel"
+ widget_class "*Applet*Tomboy*"		style "theme-panel"
+diff --git a/Zukitwo/gtk-3.0/apps/gnome-panel.css b/Zukitwo/gtk-3.0/apps/gnome-panel.css
+index 69499a5..e427e4b 100644
+--- a/Zukitwo/gtk-3.0/apps/gnome-panel.css
++++ b/Zukitwo/gtk-3.0/apps/gnome-panel.css
+@@ -43,7 +43,7 @@ PanelMenuBar.menubar.menuitem,
+ 	text-shadow: none;
+ }
+ 
+-PanelAppletFrame { 
++PanelAppletFrame {
+ 	background-color: @dark_bg_color;
+ 	background-image: -gtk-gradient (linear, left top, left bottom,
+ 		from (shade (@dark_bg_color, 1.5)),
+@@ -81,7 +81,7 @@ PanelApplet .button:active,
+ .desktop-panel .button:active {
+ 	background-image: -gtk-gradient (linear, left top, left bottom,
+ 		from (shade (@dark_bg_color, 0.85)),
+-		to (shade (@dark_bg_color, 1.0))); 
++		to (shade (@dark_bg_color, 1.0)));
+ 	border-color: shade (@dark_bg_color, 0.78);
+ 	border-radius: 0;
+ 	border-width: 0 1px 0 1px;
+@@ -105,7 +105,7 @@ PanelApplet .button:prelight,
+ 	-unico-border-gradient: none;
+ 	-unico-glow-radius: 0;
+ 	-unico-inner-stroke-width: 0;
+-	-unico-outer-stroke-width: 0;	
++	-unico-outer-stroke-width: 0;
+ 	text-shadow: none;
+ }
+ 
+diff --git a/Zukitwo/gtk-3.0/apps/nautilus.css b/Zukitwo/gtk-3.0/apps/nautilus.css
+index f709a75..bdf8fb3 100644
+--- a/Zukitwo/gtk-3.0/apps/nautilus.css
++++ b/Zukitwo/gtk-3.0/apps/nautilus.css
+@@ -125,17 +125,17 @@ NautilusWindow .sidebar .view {
+ 	background-color: @bg_color;
+ 
+ 	color: @fg_color;
+-	text-shadow: 0 1 shade (shade (@bg_color, 0.95), 1.04);  
++	text-shadow: 0 1 shade (shade (@bg_color, 0.95), 1.04);
+ }
+ 
+ NautilusWindow .sidebar row:selected {
+ 	color: @selected_fg_color;
+-	text-shadow: 0 -1 shade (@selected_bg_color, 0.8); 
++	text-shadow: 0 -1 shade (@selected_bg_color, 0.8);
+ }
+ 
+ NautilusWindow .sidebar row:backdrop:selected {
+ 	color: @backdrop_selected_fg_color;
+-	text-shadow: none; 
++	text-shadow: none;
+ }
+ 
+ NautilusWindow .sidebar .frame {
+diff --git a/Zukitwo/gtk-3.0/apps/popover.css b/Zukitwo/gtk-3.0/apps/popover.css
+index 0aef921..8046c18 100644
+--- a/Zukitwo/gtk-3.0/apps/popover.css
++++ b/Zukitwo/gtk-3.0/apps/popover.css
+@@ -4,7 +4,7 @@ GraniteWidgetsPopOver {
+ 	-GraniteWidgetsPopOver-border-radius: 6;
+ 	-GraniteWidgetsPopOver-border-width: 1;
+ 	-GraniteWidgetsPopOver-shadow-size: 18;
+-	
++
+ 	border-style: solid;
+ 	border-color: shade (@bg_color, 0.50);
+ 	background-color: @bg_color;
+@@ -21,8 +21,8 @@ GraniteWidgetsPopOver .sidebar.view {
+ 
+ GraniteWidgetsPopOver .button {
+ 	background-image: none;
+-	
+-	background-color: alpha (#fff, 0.0);	
++
++	background-color: alpha (#fff, 0.0);
+ 
+ 	-unico-outer-stroke-gradient: -gtk-gradient (linear,
+ 		left top, left bottom,
+diff --git a/Zukitwo/gtk-3.0/gtk-widgets.css b/Zukitwo/gtk-3.0/gtk-widgets.css
+index 879b8e6..ec2daf5 100644
+--- a/Zukitwo/gtk-3.0/gtk-widgets.css
++++ b/Zukitwo/gtk-3.0/gtk-widgets.css
+@@ -15,7 +15,7 @@
+ 	-GtkHTML-link-color: @link_color;
+ 	-GtkIMHtml-hyperlink-color: @link_color;
+ 	-GtkMenu-horizontal-padding: 0;
+-	-GtkMenu-vertical-padding: 0;  
++	-GtkMenu-vertical-padding: 0;
+ 	-GtkMenuBar-internal-padding: 0;
+ 	-GtkMenuItem-arrow-scaling: 0.7;
+ 	-GtkNotebook-tab-overlap: 1;
+diff --git a/Zukitwo/metacity-1/metacity-theme-1.xml b/Zukitwo/metacity-1/metacity-theme-1.xml
+index c6235a1..0dac992 100644
+--- a/Zukitwo/metacity-1/metacity-theme-1.xml
++++ b/Zukitwo/metacity-1/metacity-theme-1.xml
+@@ -81,20 +81,20 @@
+ 		<color value="#e2e2e2" />
+ 		<color value="#dcdcdc" />
+ 	</gradient>
+-	
++
+ 	<!-- Titlebar outline -->
+ 	<rectangle color="shade/#3c3c3c/1.2" filled="false" x="0" y="0" width="width - 1" height="top_height - 0"/>
+ 
+ 	<!-- Topmost lines -->
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="width" y1="0" y2="0"/>
+ 	<line color="shade/#f7f7f7/1.1" x1="0" x2="width" y1="1" y2="1"/>
+-	
++
+ 	<!-- Darkening of the left arch -->
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="4" y1="1" y2="1"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="2" y1="2" y2="2"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="3" y2="3"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="4" y2="4"/>
+-	
++
+ 	<line color="shade/#3c3c3c/1.2" x1="width-5" x2="width" y1="1" y2="1"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-3" x2="width" y1="2" y2="2"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="3" y2="3"/>
+@@ -117,18 +117,18 @@
+ 	<!-- Topmost lines -->
+ 	<line color="shade/#3c3c3c/1.16" x1="0" x2="width" y1="0" y2="0"/>
+ 	<line color="shade/#f7f7f7/1.14" x1="0" x2="width" y1="1" y2="1"/>
+-	
++
+ 	<!-- Darkening of the left arch -->
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="4" y1="1" y2="1"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="2" y1="2" y2="2"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="3" y2="3"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="4" y2="4"/>
+-	
++
+ 	<line color="shade/#3c3c3c/1.2" x1="width-5" x2="width" y1="1" y2="1"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-3" x2="width" y1="2" y2="2"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="3" y2="3"/>
+ 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="4" y2="4"/>
+-  
++
+ 	<line color="shade/#3c3c3c/0.9" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
+ </draw_ops>
+ 
+@@ -143,10 +143,10 @@
+ 		<color value="#e2e2e2" />
+ 		<color value="#dcdcdc" />
+ 	</gradient>
+-	
++
+ 	<!-- Topmost dark line -->
+ 	<line color="shade/#f7f7f7/1.1" x1="0" x2="width" y1="0" y2="0"/>
+-	
++
+ 	<line color="shade/#3c3c3c/0.94" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
+ </draw_ops>
+ 
+@@ -157,10 +157,10 @@
+ 		<color value="#e2e2e2" />
+ 		<color value="#dcdcdc" />
+ 	</gradient>
+-	
++
+ 	<!-- Topmost dark line -->
+ 	<line color="shade/#f7f7f7/1.1" x1="0" x2="width" y1="0" y2="0"/>
+-	
++
+ 	<line color="shade/#f7f7f7/0.94" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
+ </draw_ops>
+ 
+@@ -188,7 +188,7 @@
+ 	<line color="shade/gtk:bg[NORMAL]/0.88" x1="width - 2" y1="1" x2="width - 2" y2="height - 2"/>
+ 	<line color="shade/gtk:bg[NORMAL]/1.4" x1="1" y1="1" x2="width - 2" y2="1"/>
+ 	<line color="shade/gtk:bg[NORMAL]/1.4" x1="1" y1="1" x2="1" y2="height - 2"/>
+-	
++
+ 	<rectangle color="shade/gtk:bg[NORMAL]/0.25" filled="false"
+ 			   x="0" y="0"
+ 			   width="width - 1"
+@@ -234,7 +234,7 @@
+ 	<draw_ops name="left_right_background_unfocused_pressed">
+ 		<image filename="trough_right.png" x="0" y="1" width="object_width" height="object_height"/>
+ 	</draw_ops>
+-	
++
+ <!-- Button Trough Right -->
+ 	<draw_ops name="right_left_background_focused_normal">
+ 		<image filename="trough_left.png" x="0" y="1" width="object_width" height="object_height"/>
+@@ -272,7 +272,7 @@
+ 	<draw_ops name="right_right_background_unfocused_pressed">
+ 		<image filename="trough_right.png" x="0" y="1" width="object_width" height="object_height"/>
+ 	</draw_ops>
+-	
++
+ <!-- Button prelightlays -->
+ 	<draw_ops name="menu_focused_normal">
+    	<image filename="menu.png" x="0" y="1" width="object_width" height="object_height"/>
+@@ -386,7 +386,7 @@
+ 	<button function="right_right_background" state="pressed" draw_ops="right_right_background_focused_pressed"/>
+ 	<button function="menu" state="normal" draw_ops="menu_focused_normal"/>
+ 	<button function="menu" state="prelight" draw_ops="menu_focused_prelight"/>
+-	<button function="menu" state="pressed" draw_ops="menu_focused_normal"/> 
++	<button function="menu" state="pressed" draw_ops="menu_focused_normal"/>
+ 	<button function="minimize" state="normal" draw_ops="minimize_focused_normal"/>
+ 	<button function="minimize" state="prelight" draw_ops="minimize_focused_prelight"/>
+ 	<button function="minimize" state="pressed" draw_ops="minimize_focused_pressed"/>
+@@ -521,4 +521,4 @@
+ <window type="utility" style_set="utility"/>
+ <window type="border" style_set="border"/>
+ 
+-</metacity_theme> 
++</metacity_theme>
+diff --git a/Zukitwo/metacity-1/metacity-theme-3.xml b/Zukitwo/metacity-1/metacity-theme-3.xml
+index e57ff49..0725bb2 100644
+--- a/Zukitwo/metacity-1/metacity-theme-3.xml
++++ b/Zukitwo/metacity-1/metacity-theme-3.xml
+@@ -45,7 +45,7 @@
+ 	<distance name="right_width" value="0" />
+ 	<distance name="left_titlebar_edge" value="5"/>
+ 	<distance name="right_titlebar_edge" value="5"/>
+-	<distance name="title_vertical_pad" value="10"/> <!-- 
++	<distance name="title_vertical_pad" value="10"/> <!--
+ 							This needs to be 1 less then the
+ 							title_vertical_pad on normal state
+ 							or you'll have bigger buttons -->
+@@ -226,29 +226,29 @@
+ 
+ <draw_ops name="border_right_focused">
+ 	<line
+-		x1="width-1" y1="0" 
+-		x2="width-1" y2="height" 
++		x1="width-1" y1="0"
++		x2="width-1" y2="height"
+ 		color="C_border_focused" />
+ </draw_ops>
+ 
+ <draw_ops name="border_right_unfocused">
+ 	<line
+-		x1="width" y1="0" 
+-		x2="width" y2="height" 
++		x1="width" y1="0"
++		x2="width" y2="height"
+ 		color="C_border_unfocused" />
+ </draw_ops>
+ 
+ <draw_ops name="border_left_focused">
+ 	<line
+-		x1="0" y1="0" 
+-		x2="0" y2="height" 
++		x1="0" y1="0"
++		x2="0" y2="height"
+ 		color="C_border_focused" />
+ </draw_ops>
+ 
+ <draw_ops name="border_left_unfocused">
+ 	<line
+-		x1="0" y1="0" 
+-		x2="0" y2="height" 
++		x1="0" y1="0"
++		x2="0" y2="height"
+ 		color="C_border_unfocused" />
+ </draw_ops>
+ 
