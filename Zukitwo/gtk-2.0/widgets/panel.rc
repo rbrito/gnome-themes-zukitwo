@@ -11,7 +11,7 @@ style "theme-panel"
 	text[NORMAL]	= "#f5f5f5"
 	text[PRELIGHT]	= "#ffffff"
 	text[ACTIVE]	= "#f5f5f5"
-	
+
 	engine "pixmap" {
 		image {
 			function	= BOX
@@ -84,12 +84,12 @@ style "theme-main-menu-text" = "theme-panel-text"
 	text[PRELIGHT]	= "#ffffff"
 }
 
-style "theme-panel-handle" 
+style "theme-panel-handle"
 {
-	engine "pixmap" {    
+	engine "pixmap" {
 		image {
 			function = HANDLE
-		}    
+		}
 		image {
 			function = HANDLE
 		}
@@ -106,7 +106,7 @@ class "PanelToplevel*"			style "theme-panel"
 widget_class "*PanelToplevel*"		style "theme-panel"
 widget_class "*notif*"			style "theme-panel"
 widget_class "*Notif*"			style "theme-panel"
-widget_class "*Tray*"			style "theme-panel" 
+widget_class "*Tray*"			style "theme-panel"
 widget_class "*tray*"			style "theme-panel"
 widget_class "*computertemp*"		style "theme-panel"
 widget_class "*Applet*Tomboy*"		style "theme-panel"

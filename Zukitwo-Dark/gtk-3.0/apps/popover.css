@@ -4,7 +4,7 @@ GraniteWidgetsPopOver {
 	-GraniteWidgetsPopOver-border-radius: 6;
 	-GraniteWidgetsPopOver-border-width: 1;
 	-GraniteWidgetsPopOver-shadow-size: 18;
-	
+
 	border-style: solid;
 	border-color: shade (@bg_color, 0.50);
 	background-color: @bg_color;
@@ -21,8 +21,8 @@ GraniteWidgetsPopOver .sidebar.view {
 
 GraniteWidgetsPopOver .button {
 	background-image: none;
-	
-	background-color: alpha (#fff, 0.0);	
+
+	background-color: alpha (#fff, 0.0);
 
 	-unico-outer-stroke-gradient: -gtk-gradient (linear,
 		left top, left bottom,

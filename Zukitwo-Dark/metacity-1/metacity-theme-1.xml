@@ -81,20 +81,20 @@
 		<color value="#565656" />
 		<color value="#4C4C4C" />
 	</gradient>
-	
+
 	<!-- Titlebar outline -->
 	<rectangle color="shade/#3c3c3c/1.2" filled="false" x="0" y="0" width="width - 1" height="top_height - 0"/>
 
 	<!-- Topmost lines -->
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="width" y1="0" y2="0"/>
 	<line color="shade/#6C6C6C/1.1" x1="0" x2="width" y1="1" y2="1"/>
-	
+
 	<!-- Darkening of the left arch -->
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="4" y1="1" y2="1"/>
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="2" y1="2" y2="2"/>
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="3" y2="3"/>
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="4" y2="4"/>
-	
+
 	<line color="shade/#3c3c3c/1.2" x1="width-5" x2="width" y1="1" y2="1"/>
 	<line color="shade/#3c3c3c/1.2" x1="width-3" x2="width" y1="2" y2="2"/>
 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="3" y2="3"/>
@@ -117,18 +117,18 @@
 	<!-- Topmost lines -->
 	<line color="shade/#3c3c3c/1.16" x1="0" x2="width" y1="0" y2="0"/>
 	<line color="shade/#6C6C6C/1.14" x1="0" x2="width" y1="1" y2="1"/>
-	
+
 	<!-- Darkening of the left arch -->
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="4" y1="1" y2="1"/>
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="2" y1="2" y2="2"/>
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="3" y2="3"/>
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="4" y2="4"/>
-	
+
 	<line color="shade/#3c3c3c/1.2" x1="width-5" x2="width" y1="1" y2="1"/>
 	<line color="shade/#3c3c3c/1.2" x1="width-3" x2="width" y1="2" y2="2"/>
 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="3" y2="3"/>
 	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="4" y2="4"/>
-  
+
 	<line color="shade/#3c3c3c/0.9" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
 </draw_ops>
 
@@ -143,10 +143,10 @@
 		<color value="#565656" />
 		<color value="#4C4C4C" />
 	</gradient>
-	
+
 	<!-- Topmost dark line -->
 	<line color="shade/#6C6C6C/1.1" x1="0" x2="width" y1="0" y2="0"/>
-	
+
 	<line color="shade/#3c3c3c/0.94" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
 </draw_ops>
 
@@ -157,10 +157,10 @@
 		<color value="#565656" />
 		<color value="#4C4C4C" />
 	</gradient>
-	
+
 	<!-- Topmost dark line -->
 	<line color="shade/#6C6C6C/1.1" x1="0" x2="width" y1="0" y2="0"/>
-	
+
 	<line color="shade/#6C6C6C/0.94" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
 </draw_ops>
 
@@ -188,7 +188,7 @@
 	<line color="shade/gtk:bg[NORMAL]/0.88" x1="width - 2" y1="1" x2="width - 2" y2="height - 2"/>
 	<line color="shade/gtk:bg[NORMAL]/1.4" x1="1" y1="1" x2="width - 2" y2="1"/>
 	<line color="shade/gtk:bg[NORMAL]/1.4" x1="1" y1="1" x2="1" y2="height - 2"/>
-	
+
 	<rectangle color="shade/gtk:bg[NORMAL]/0.25" filled="false"
 			   x="0" y="0"
 			   width="width - 1"
@@ -234,7 +234,7 @@
 	<draw_ops name="left_right_background_unfocused_pressed">
 		<image filename="trough_right.png" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
-	
+
 <!-- Button Trough Right -->
 	<draw_ops name="right_left_background_focused_normal">
 		<image filename="trough_left.png" x="0" y="1" width="object_width" height="object_height"/>
@@ -272,7 +272,7 @@
 	<draw_ops name="right_right_background_unfocused_pressed">
 		<image filename="trough_right.png" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
-	
+
 <!-- Button prelightlays -->
 	<draw_ops name="menu_focused_normal">
    	<image filename="menu.png" x="0" y="1" width="object_width" height="object_height"/>
@@ -386,7 +386,7 @@
 	<button function="right_right_background" state="pressed" draw_ops="right_right_background_focused_pressed"/>
 	<button function="menu" state="normal" draw_ops="menu_focused_normal"/>
 	<button function="menu" state="prelight" draw_ops="menu_focused_prelight"/>
-	<button function="menu" state="pressed" draw_ops="menu_focused_normal"/> 
+	<button function="menu" state="pressed" draw_ops="menu_focused_normal"/>
 	<button function="minimize" state="normal" draw_ops="minimize_focused_normal"/>
 	<button function="minimize" state="prelight" draw_ops="minimize_focused_prelight"/>
 	<button function="minimize" state="pressed" draw_ops="minimize_focused_pressed"/>
@@ -521,4 +521,4 @@
 <window type="utility" style_set="utility"/>
 <window type="border" style_set="border"/>
 
-</metacity_theme> 
+</metacity_theme>

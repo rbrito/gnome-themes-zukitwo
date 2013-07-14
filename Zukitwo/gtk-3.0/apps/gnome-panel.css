@@ -43,7 +43,7 @@ PanelMenuBar.menubar.menuitem,
 	text-shadow: none;
 }
 
-PanelAppletFrame { 
+PanelAppletFrame {
 	background-color: @dark_bg_color;
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@dark_bg_color, 1.5)),
@@ -81,7 +81,7 @@ PanelApplet .button:active,
 .desktop-panel .button:active {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@dark_bg_color, 0.85)),
-		to (shade (@dark_bg_color, 1.0))); 
+		to (shade (@dark_bg_color, 1.0)));
 	border-color: shade (@dark_bg_color, 0.78);
 	border-radius: 0;
 	border-width: 0 1px 0 1px;
@@ -105,7 +105,7 @@ PanelApplet .button:prelight,
 	-unico-border-gradient: none;
 	-unico-glow-radius: 0;
 	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;	
+	-unico-outer-stroke-width: 0;
 	text-shadow: none;
 }
 

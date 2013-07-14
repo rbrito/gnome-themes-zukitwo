@@ -50,7 +50,7 @@ style "nautilus-scale" {
 			detail		= "trough"
 			file		= "Nautilus/trough.png"
 			border		= { 10, 10, 5, 15 }
-			}	
+			}
 		image {
 			function	= SLIDER
 			overlay_file	= "Nautilus/slider.png"
@@ -69,7 +69,7 @@ style "nautilus-breadcrumbs" {
 	ythickness = 0
 	GtkButton::child-displacement-y	= 0
 	GtkButton::inner-border		= { 0, 11, 0, 0}
-	engine "pixmap" {	
+	engine "pixmap" {
 		image {
 			function	= BOX
 			recolorable	= TRUE
@@ -126,7 +126,7 @@ style "nautilus-left-slider" {
 		}
 }
 
-style "nautilus-right-slider" {	
+style "nautilus-right-slider" {
 	xthickness = 0
 	ythickness = 0
 	engine "pixmap" {
@@ -138,7 +138,7 @@ style "nautilus-right-slider" {
 			}
 		}
 }
-style "nautilus-toolbar" 
+style "nautilus-toolbar"
 {
 	xthickness = 1
 	ythickness = 1
@@ -192,7 +192,7 @@ style "toolbuttons" = "murrine-default" {
 			file		= "dummy.png"
 			border		= { 5, 5, 5, 5 }
 			stretch		= TRUE
-			}  
+			}
 		image {
 			function	= BOX
 			recolorable	= TRUE
@@ -200,16 +200,16 @@ style "toolbuttons" = "murrine-default" {
 			file		= "dummy.png"
 			border		= { 5, 5, 5, 5 }
 			stretch		= TRUE
-			}  
+			}
 		}
 }
 
 style "pixmap-mode-button" {
-	engine "pixmap" {	
+	engine "pixmap" {
 		image { function = BOX state = PRELIGHT		file = "Nautilus/mode_prelight.png" border = { 3, 13, 3, 3 } stretch = TRUE }
 		image { function = BOX state = NORMAL		file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE }
-	    	image { function = BOX state = ACTIVE		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }  
-		image { function = BOX state = INSENSITIVE	file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE } 
+	    	image { function = BOX state = ACTIVE		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }
+		image { function = BOX state = INSENSITIVE	file = "Nautilus/mode_normal.png"   border = { 3, 13, 3, 3 } stretch = TRUE }
 	    	image { function = BOX state = SELECTED		file = "Nautilus/mode_pressed.png"  border = { 3, 13, 3, 3 } stretch = TRUE }
 		}
 }
@@ -229,7 +229,7 @@ widget_class	"*Nautilus*Notebook"			style "murrine-thin"
 
 widget 		"*ModeButton*"                          style "pixmap-mode-button"
 widget "*.nautilus-extra-view-widget" 			style : highest "nautilus-extra-view"
-widget_class 	"*NautilusPathBar.*ToggleButton*"	style "nautilus-breadcrumbs" 
+widget_class 	"*NautilusPathBar.*ToggleButton*"	style "nautilus-breadcrumbs"
 
-widget 		"Nautilus*left_slider*"			style "nautilus-left-slider" 
+widget 		"Nautilus*left_slider*"			style "nautilus-left-slider"
 widget 		"Nautilus*right_slider*"		style "nautilus-right-slider"

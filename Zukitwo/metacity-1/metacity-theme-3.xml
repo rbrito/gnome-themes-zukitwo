@@ -45,7 +45,7 @@
 	<distance name="right_width" value="0" />
 	<distance name="left_titlebar_edge" value="5"/>
 	<distance name="right_titlebar_edge" value="5"/>
-	<distance name="title_vertical_pad" value="10"/> <!-- 
+	<distance name="title_vertical_pad" value="10"/> <!--
 							This needs to be 1 less then the
 							title_vertical_pad on normal state
 							or you'll have bigger buttons -->
@@ -226,29 +226,29 @@
 
 <draw_ops name="border_right_focused">
 	<line
-		x1="width-1" y1="0" 
-		x2="width-1" y2="height" 
+		x1="width-1" y1="0"
+		x2="width-1" y2="height"
 		color="C_border_focused" />
 </draw_ops>
 
 <draw_ops name="border_right_unfocused">
 	<line
-		x1="width" y1="0" 
-		x2="width" y2="height" 
+		x1="width" y1="0"
+		x2="width" y2="height"
 		color="C_border_unfocused" />
 </draw_ops>
 
 <draw_ops name="border_left_focused">
 	<line
-		x1="0" y1="0" 
-		x2="0" y2="height" 
+		x1="0" y1="0"
+		x2="0" y2="height"
 		color="C_border_focused" />
 </draw_ops>
 
 <draw_ops name="border_left_unfocused">
 	<line
-		x1="0" y1="0" 
-		x2="0" y2="height" 
+		x1="0" y1="0"
+		x2="0" y2="height"
 		color="C_border_unfocused" />
 </draw_ops>
 

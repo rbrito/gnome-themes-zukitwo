@@ -1,6 +1,6 @@
 ### Styles gedit. Removes the ugly frame etc. ###
 
-style "gedit-frame" {	
+style "gedit-frame" {
 	engine "pixmap" {
  		image {
 			function = SHADOW
@@ -8,7 +8,7 @@ style "gedit-frame" {
 	}
 }
 
-style "gedit-statusbar" {	
+style "gedit-statusbar" {
 	ythickness = 0
 }
 
