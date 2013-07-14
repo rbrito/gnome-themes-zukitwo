@@ -6,8 +6,8 @@ Subject: Add px as Unity to avoid warnings from gtk.
  Zukitwo-Dark/gtk-3.0/apps/epiphany.css |  4 ++--
  Zukitwo-Dark/gtk-3.0/apps/nautilus.css | 11 +++++------
  Zukitwo-Dark/gtk-3.0/apps/unity.css    |  2 +-
- Zukitwo-Dark/gtk-3.0/gtk-widgets.css   | 34 +++++++++++++++++-----------------
- 4 files changed, 25 insertions(+), 26 deletions(-)
+ Zukitwo-Dark/gtk-3.0/gtk-widgets.css   | 36 +++++++++++++++++-----------------
+ 4 files changed, 26 insertions(+), 27 deletions(-)
 
 diff --git a/Zukitwo-Dark/gtk-3.0/apps/epiphany.css b/Zukitwo-Dark/gtk-3.0/apps/epiphany.css
 index dac5024..a9daa1f 100644
@@ -93,7 +93,7 @@ index aef02c5..05b4a19 100644
  
  .unity-panel.menubar.menuitem:hover,
 diff --git a/Zukitwo-Dark/gtk-3.0/gtk-widgets.css b/Zukitwo-Dark/gtk-3.0/gtk-widgets.css
-index deb603e..91194ea 100644
+index deb603e..24003c4 100644
 --- a/Zukitwo-Dark/gtk-3.0/gtk-widgets.css
 +++ b/Zukitwo-Dark/gtk-3.0/gtk-widgets.css
 @@ -82,7 +82,7 @@ GtkWindow {
@@ -177,6 +177,15 @@ index deb603e..91194ea 100644
  
  	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
  		from (shade (@bg_color, 0.74)),
+@@ -1967,7 +1967,7 @@ GtkSwitch.trough:active {
+ 		to (shade (@selected_bg_color, 0.99)));
+ 
+ 	color: @selected_fg_color;
+-	text-shadow: 0 -1 shade (@selected_bg_color, 0.7);
++	text-shadow: 0 -1px shade (@selected_bg_color, 0.7);
+ 
+ 	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+ 		from (shade (@selected_bg_color, 0.7)),
 @@ -1983,7 +1983,7 @@ GtkSwitch.trough:insensitive {
  		to (shade (@bg_color, 0.99)));
  
