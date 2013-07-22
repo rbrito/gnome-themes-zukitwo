@@ -1,3 +1,15 @@
+gnome-themes-zukitwo (2012.08.17-2~1.gbp4297da) UNRELEASED; urgency=low
+
+  ** SNAPSHOT build @4297dacb957ea2697e8b02620f7f39ec9ae6f5c7 **
+
+  * debian/patches:
+    + Add patch to remove spurious trailing whitespaces.
+  * Optimize png files.
+  * Make duplicate files symlinks.
+  * Remove Zukitwo.emerald.
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Sun, 21 Jul 2013 23:53:43 -0300
+
 gnome-themes-zukitwo (2012.08.17-1) unstable; urgency=low
 
   * Imported Upstream version 2012.08.17
