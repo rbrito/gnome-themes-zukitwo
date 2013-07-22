@@ -1,6 +1,6 @@
-gnome-themes-zukitwo (2012.08.17-2~3.gbp856373) UNRELEASED; urgency=low
+gnome-themes-zukitwo (2012.08.17-2~4.gbp985c6b) UNRELEASED; urgency=low
 
-  ** SNAPSHOT build @8563732a4c094c660b92dc0c2174bc40fb6d6070 **
+  ** SNAPSHOT build @985c6be91eef9d8dbf6e2ffd0cb2583179cf7400 **
 
   * debian/patches:
     + Add patch to remove spurious trailing whitespaces.
@@ -14,6 +14,9 @@ gnome-themes-zukitwo (2012.08.17-2~3.gbp856373) UNRELEASED; urgency=low
       - Rename to be in markdown format.
       - Put the reason for this repository.
     + Fix incorrect line endings and trailing whitespaces.
+    + debian/patches:
+      - Remove patches and make them applied after all.
+    + Remove duplication by making more symlinks.
 
  -- Rogério Brito <rbrito@ime.usp.br>  Sun, 21 Jul 2013 23:53:43 -0300
 
