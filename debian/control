@@ -15,7 +15,9 @@ Depends:
  gtk2-engines-murrine (>= 0.98.1.1),
  gtk2-engines-pixbuf,
  gtk3-engines-unico (>= 1.0.2),
+ gtk3-engines-unico (<= 1.0.2-1),
  libgtk-3-0 (>= 3.4),
+ libgtk-3-0 (<< 3.6),
  ${misc:Depends},
  ${shlibs:Depends}
 Recommends:
