@@ -1,6 +1,6 @@
-gnome-themes-zukitwo (2012.08.17-2~4.gbp985c6b) UNRELEASED; urgency=low
+gnome-themes-zukitwo (2012.08.17-2~5.gbp98884f) UNRELEASED; urgency=low
 
-  ** SNAPSHOT build @985c6be91eef9d8dbf6e2ffd0cb2583179cf7400 **
+  ** SNAPSHOT build @98884ff7a813adf5b22e4a77659a0f38276a639f **
 
   * debian/patches:
     + Add patch to remove spurious trailing whitespaces.
@@ -17,6 +17,8 @@ gnome-themes-zukitwo (2012.08.17-2~4.gbp985c6b) UNRELEASED; urgency=low
     + debian/patches:
       - Remove patches and make them applied after all.
     + Remove duplication by making more symlinks.
+  * debian/docs:
+    + Fix README file not being encountered after renaming.
 
  -- Rogério Brito <rbrito@ime.usp.br>  Sun, 21 Jul 2013 23:53:43 -0300
 
