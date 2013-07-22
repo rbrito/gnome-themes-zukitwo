@@ -42,7 +42,7 @@ If changes doesn't take place after selecting the themes you can try to log out 
 ## USING A TRANSPARENT PANEL BACKGROUND IN GNOME 2 ##
 
 1. Right-click on your panel and select properties.
-2. Set the height to 32px and the position to bottom. 
+2. Set the height to 32px and the position to bottom.
 3. Click on the Background tab and select to use a custom background image.
 4. Select the panelbg.png included the archive. (panelbg.png)
 If the panel didn't become transparent you're using an old version of Gnome, or you are not using the Zukitwo GTK theme.
