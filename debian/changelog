@@ -1,12 +1,19 @@
-gnome-themes-zukitwo (2012.08.17-2~1.gbp4297da) UNRELEASED; urgency=low
+gnome-themes-zukitwo (2012.08.17-2~3.gbp856373) UNRELEASED; urgency=low
 
-  ** SNAPSHOT build @4297dacb957ea2697e8b02620f7f39ec9ae6f5c7 **
+  ** SNAPSHOT build @8563732a4c094c660b92dc0c2174bc40fb6d6070 **
 
   * debian/patches:
     + Add patch to remove spurious trailing whitespaces.
-  * Optimize png files.
-  * Make duplicate files symlinks.
-  * Remove Zukitwo.emerald.
+  * debian/control:
+    + Make versions in dependencies more strict.
+  * The following is really development instead of packaging:
+    + Optimize png files.
+    + Make duplicate files symlinks.
+    + Remove Zukitwo.emerald.
+    + README:
+      - Rename to be in markdown format.
+      - Put the reason for this repository.
+    + Fix incorrect line endings and trailing whitespaces.
 
  -- Rogério Brito <rbrito@ime.usp.br>  Sun, 21 Jul 2013 23:53:43 -0300
 
